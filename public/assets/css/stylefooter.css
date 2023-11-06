@@ -1,0 +1,34 @@
+footer{
+    background-color:var(--dark-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 450px;
+    align-content:space-between 
+}
+p{
+    color: var(--tertiary-color);
+}
+a{
+    color: var(--primary-color);
+}
+ul{
+    list-style-type: none;
+}
+
+a:hover{
+    color:var(--tertiary-color);
+
+}
+a:active{
+ color:var(--light-color);
+}
+.uk-footer-right{
+   align-content:space-between 
+}
+.uk-footer-left{
+    padding-right: 200px;
+}
