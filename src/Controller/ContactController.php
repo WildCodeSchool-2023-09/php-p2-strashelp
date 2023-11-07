@@ -4,13 +4,14 @@ namespace App\Controller;
 
 use App\Model\ContactManager;
 
+/**
+* @SuppressWarnings(PHPMD.CyclomaticComplexity)
+**/
 class ContactController extends AbstractController
 {
     public function contact(): string
     {
         $errors = [];
-        
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentialsContact = array_map('trim', $_POST);
             $credentialsContact = array_map('htmlentities', $credentialsContact);
@@ -32,11 +33,9 @@ class ContactController extends AbstractController
             }
 
             if (empty($errors)) {
-
                 $contactManager = new ContactManager();
                 $contactManager->insert($credentialsContact);
             }
-            
         }
         return $this->twig->render('Contact/contact.html.twig', ['errors' => $errors]);
     }
