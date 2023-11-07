@@ -25,26 +25,26 @@ SET time_zone = "+00:00";
 CREATE DATABASE `StrasHelp`;
 USE `StrasHelp`;
 
-CREATE TABLE `Contact` (
+CREATE TABLE `contact` (
 `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 `firstname` VARCHAR(100) NOT NULL,
 `lastname` VARCHAR(100) NOT NULL,
 `email` VARCHAR(150) NOT NULL,
 `message` VARCHAR(3000) NOT NULL,
-`users_id` INT NULL,
-FOREIGN KEY (users_id) REFERENCES users(id)
+`user_id` INT NULL,
+FOREIGN KEY (user_id) REFERENCES user(id)
 )
 
-CREATE TABLE `ReportAds`(
+CREATE TABLE `report_ad`(
 `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`Inappropriated_content` BOOL,
-`categorie_Error` BOOL,
-`Baking_infos` BOOL,
-`users_id` INT NULL,
-FOREIGN KEY (users_id) REFERENCES users(id)
+`inappropriated_content` BOOL,
+`categorie_error` BOOL,
+`banking_info` BOOL,
+`user_id` INT NULL,
+FOREIGN KEY (user_id) REFERENCES user(id)
 )
 
-CREATE TABLE `Users` (
+CREATE TABLE `user` (
 `id` INT PRIMARY KEY AUTO_INCREMENT  NOT NULL,
 `firstname` VARCHAR(100) NOT NULL,
 `lastname` VARCHAR(100) NOT NULL,
@@ -57,35 +57,35 @@ CREATE TABLE `Users` (
 `is_admin` bool
 )
 
-CREATE TABLE `Ads` (
+CREATE TABLE `ad` (
 `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 `title` VARCHAR(100) NOT NULL,
 `image` VARCHAR(500),
 `description` VARCHAR(6000) NOT NULL,
-`ads_type` bool NOT NULL,
+`ad_type` bool NOT NULL,
 `username` VARCHAR(100) NOT NULL,
 `localisation` VARCHAR(150) NOT NULL,
 `published_date` date,
-`users_id` INT NOT NULL,
+`user_id` INT NOT NULL,
 FOREIGN KEY (users_id) REFERENCES users(id)
 )
 
-CREATE TABLE `Offer_users` (
+CREATE TABLE `offer_user` (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`users_id` INT NOT NULL,
-FOREIGN KEY (users_id) REFERENCES users(id),
-`ads_id` INT NOT NULL,
-FOREIGN KEY (ads_id) REFERENCES ads(id)
+`user_id` INT NOT NULL,
+FOREIGN KEY (user_id) REFERENCES user(id),
+`ad_id` INT NOT NULL,
+FOREIGN KEY (ad_id) REFERENCES ad(id)
 )
 
-CREATE TABLE `Images` (
+CREATE TABLE `image` (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`ImageName` VARCHAR(500),
-`ads_id` INT NOT NULL,
-FOREIGN KEY (ads_id) REFERENCES ads(id)
+`image_name` VARCHAR(500),
+`ad_id` INT NOT NULL,
+FOREIGN KEY (ad_id) REFERENCES ad(id)
 )
 
-CREATE TABLE `Categories` (
+CREATE TABLE `categorie` (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 `is_jardinage` BOOL,
 `is_bricolage` BOOL,
@@ -93,10 +93,10 @@ id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 `is_soutienscolaire` BOOL
 )
 
-CREATE TABLE `CategorieAds` (
+CREATE TABLE `categorie_ad` (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`categories_id` INT NOT NULL,
-FOREIGN KEY (categories_id) REFERENCES categories(id),
-`ads_id` INT NOT NULL,
-FOREIGN KEY (ads_id) REFERENCES ads(id)
+`categorie_id` INT NOT NULL,
+FOREIGN KEY (categorie_id) REFERENCES categorie(id),
+`ad_id` INT NOT NULL,
+FOREIGN KEY (ad_id) REFERENCES ad(id)
 )
