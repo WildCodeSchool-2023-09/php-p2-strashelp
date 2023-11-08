@@ -47,14 +47,14 @@ text-decoration: none;
     
     color: var(--primary-color); 
 }
-.inscrip{
+.inscrit{
     align-self: center;
     margin-right: 1rem;
 }    
-.inscrip>li>a:hover{
+.inscrit>li>a:hover{
     color:var(--tertiary-color);
 }    
-.inscrip>li>a:active{
+.inscrit>li>a:active{
     color:var(--light-color);
    }
 
