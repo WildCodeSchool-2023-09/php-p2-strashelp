@@ -5,12 +5,18 @@
     color: var(--primary-color);
 }
 
+   
+
 .uk-navbar-nav>li>a {
     color: var(--primary-color);
     font-weight: 400;
-}
-    .uk-navbar-left, a {
+    text-transform: none;
+    font-size:var(--h5);
+    font-weight:500;
+}     
+.uk-navbar-left, a {
     margin-right: 1rem;
+   
 }
 .uk-navbar-nav>li>a:hover{
     color:var(--tertiary-color);
