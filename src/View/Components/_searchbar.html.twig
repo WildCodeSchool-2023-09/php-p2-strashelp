@@ -1,0 +1,14 @@
+<section class="searchbar">
+    <h3>Que recherchez-vous ?</h3>
+        <form action="" method="GET" class="essai">
+
+            <div class="dropdown">
+                <button class="menuButton">Catégorie</button>
+                    <ul class="dropdown-child" role="menu">
+                        {% for categorie in categories%}<li>{{categorie}}</li> {% endfor %}
+                    </ul>
+            </div>
+                <input type= "search" placeholder="Entrez votre recherche">
+                <input type="submit" class="button-1" name="sendSearch" value="Rechercher">
+        </form>
+</section>

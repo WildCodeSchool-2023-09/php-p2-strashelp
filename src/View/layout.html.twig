@@ -8,8 +8,12 @@
 
     <title>{% block title %}{% endblock %}</title>
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-    {% block stylesheet %}{% endblock %}
+    {% block stylesheet %}
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/_searchbar.css">
+        <link rel="stylesheet" href="assets/css/_login.css">
+        <link rel="stylesheet" href="assets/css/variables.css">
+    {% endblock %}
 </head>
 
 <body>
