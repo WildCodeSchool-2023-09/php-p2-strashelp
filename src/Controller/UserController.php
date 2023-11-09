@@ -27,7 +27,7 @@ class UserController extends AbstractController
                 $users = $userManager->selectOneByIdentifiant($credentials['identifiant']);
 
                 if ($users && password_verify($credentials['password'], $users['password'])) {
-                    $_SESSION['users_id'] = $users['id'];
+                    $_SESSION['user_id'] = $users['id'];
                     header('Location: /login');
                     exit();
                 } else {
@@ -36,5 +36,12 @@ class UserController extends AbstractController
             }
         }
         return $this->twig->render('Home/index.html.twig', ['errors' => $errors]);
+    }
+
+    public function logout()
+    {
+        session_unset();
+        session_destroy();
+        header('Location : /');
     }
 }
