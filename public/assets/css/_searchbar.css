@@ -10,7 +10,7 @@
     width:50%;
 }
 
-.essai>input{
+form>input{
     width:50%;
     border-radius: var(--border-radius-20);
 }

@@ -3,10 +3,14 @@
         <form action="" method="GET" class="essai">
 
             <div class="dropdown">
-                <select class="menuButton">Catégorie</select>
-                        {% for categorie in categories%}<option  class="dropdown-child">{{ categorie.name }}</option> {% endfor %}
+                <select class="menuButton">
+                    <option value="">Catégorie</option>
+                        {% for categorie in categories%}
+                        <option  class="dropdown-child" value="">{{ categorie.name }}</option>
+                        {% endfor %}
+                </select>
             </div>
                 <input type= "search" placeholder="Entrez votre recherche">
-                <input type="submit" class="button-1" name="sendSearch" value="Rechercher">
+                <input type="submit" class="button-1 login-submit" name="sendSearch" value="Rechercher">
         </form>
 </section>
