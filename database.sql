@@ -61,3 +61,84 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE DATABASE `StrasHelp`;
+USE `StrasHelp`;
+
+CREATE TABLE `Contact` (
+`id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`firstname` VARCHAR(100) NOT NULL,
+`lastname` VARCHAR(100) NOT NULL,
+`email` VARCHAR(150) NOT NULL,
+`message` VARCHAR(3000) NOT NULL,
+`users_id` INT NULL,
+FOREIGN KEY (users_id) REFERENCES users(id)
+)
+
+CREATE TABLE `ReportAds`(
+`id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`Inappropriated_content` BOOL,
+`categorie_Error` BOOL,
+`Baking_infos` BOOL,
+`users_id` INT NULL,
+FOREIGN KEY (users_id) REFERENCES users(id)
+)
+
+CREATE TABLE `Users` (
+`id` INT PRIMARY KEY AUTO_INCREMENT  NOT NULL,
+`firstname` VARCHAR(100) NOT NULL,
+`lastname` VARCHAR(100) NOT NULL,
+`username`VARCHAR(100) NOT NULL,
+`password` VARCHAR(100) NOT NULL,
+`email` VARCHAR(150) NOT NULL,
+`phone_number` INT(11) NOT NULL,
+`birthdate` date NOT NULL,
+`localisation` VARCHAR(150) NOT NULL,
+`is_admin` bool
+)
+
+CREATE TABLE `Ads` (
+`id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`title` VARCHAR(100) NOT NULL,
+`image` VARCHAR(500),
+`description` VARCHAR(6000) NOT NULL,
+`ads_type` bool NOT NULL,
+`username` VARCHAR(100) NOT NULL,
+`localisation` VARCHAR(150) NOT NULL,
+`published_date` date,
+`users_id` INT NOT NULL,
+FOREIGN KEY (users_id) REFERENCES users(id)
+)
+
+CREATE TABLE `Offer_users` (
+id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`users_id` INT NOT NULL,
+FOREIGN KEY (users_id) REFERENCES users(id),
+`ads_id` INT NOT NULL,
+FOREIGN KEY (ads_id) REFERENCES ads(id)
+)
+
+CREATE TABLE `Images` (
+id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`ImageName` VARCHAR(500),
+`ads_id` INT NOT NULL,
+FOREIGN KEY (ads_id) REFERENCES ads(id)
+)
+
+CREATE TABLE `Categories` (
+id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`is_jardinage` BOOL,
+`is_bricolage` BOOL,
+`is_mecanique` BOOL,
+`is_soutienscolaire` BOOL
+)
+
+CREATE TABLE `CategorieAds` (
+id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`categories_id` INT NOT NULL,
+FOREIGN KEY (categories_id) REFERENCES categories(id),
+`ads_id` INT NOT NULL,
+FOREIGN KEY (ads_id) REFERENCES ads(id)
+)
+
+insert into `ads` (title, image, description, ads_type, username, localisation, published_date, users_id) VALUES ('jardin', 'assetimage', 'une belle moto', '1', 'Zama', 'bordeaux', '2023-10-10', '1')
