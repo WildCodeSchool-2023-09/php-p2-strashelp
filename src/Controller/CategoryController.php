@@ -6,6 +6,5 @@ use App\Model\CategoryManager;
 
 class CategoryController extends AbstractController
 {
+    //obsolète pour l'heure.
 }
-
-//déplacement de CategoryController dans l'abstract !!!!!!!!!!!!!!!!!!!

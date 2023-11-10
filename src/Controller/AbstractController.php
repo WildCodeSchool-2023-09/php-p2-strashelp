@@ -26,13 +26,13 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+        $this->twig->addGlobal('categories', $this->showCategory());
     }
-
-    public function showCategory(CategoryController $categories): string
+    private function showCategory()
     {
         $categoryManager = new CategoryManager();
         $categories = $categoryManager->selectAll();
 
-        return $this->twig->render('Searchbar/searchbar.html.twig', ['categories' => $categories]);
+        return $categories;
     }
 }
