@@ -1,3 +1,4 @@
-body {
-    color: #f76c6c;
-}
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import './variables.css';
+@import './styleNavBar.css';
+@import './stylefooter.css';

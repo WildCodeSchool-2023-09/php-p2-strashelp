@@ -16,11 +16,13 @@
 </head>
 
 <body>
-    {% block content %}{% endblock %}
+    {% block content %}
+			{% include'Components/_navbar.html.twig' %}
+			{% include'Components/_footer.html.twig' %}
+	{% endblock %}
     {% block javascript %}
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit-icons.min.js"></script>
     {% endblock %}
 </body>
 </html>
-
-
