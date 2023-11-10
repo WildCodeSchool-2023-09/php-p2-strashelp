@@ -5,6 +5,7 @@ namespace App\Controller;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
+use App\Model\CategoryManager;
 
 /**
  * Initialized some Controller common features (Twig...)
@@ -25,5 +26,13 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+    }
+
+    public function showCategory(CategoryController $categories): string
+    {
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectAll();
+
+        return $this->twig->render('Searchbar/searchbar.html.twig', ['categories' => $categories]);
     }
 }
