@@ -1,12 +1,9 @@
 <?php
 
-namespace App\Controller;
+namespace App\controller;
 
-use App\Model\ContactManager;
+use App\Controller\AbstractController;
 
-/**
-* @SuppressWarnings(PHPMD.CyclomaticComplexity)
-**/
 class ContactController extends AbstractController
 {
     public function contact(): string
