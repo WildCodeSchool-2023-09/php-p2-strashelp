@@ -37,9 +37,7 @@ FOREIGN KEY (user_id) REFERENCES user(id)
 
 CREATE TABLE `report_ad`(
 `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`inappropriated_content` BOOL,
-`categorie_error` BOOL,
-`banking_info` BOOL,
+`report_reason` VARCHAR(255) DEFAULT NULL,
 `user_id` INT NULL,
 FOREIGN KEY (user_id) REFERENCES user(id)
 )
@@ -85,15 +83,14 @@ id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 FOREIGN KEY (ad_id) REFERENCES ad(id)
 )
 
-CREATE TABLE `categorie` (
+CREATE TABLE `category` (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`is_jardinage` BOOL,
-`is_bricolage` BOOL,
-`is_mecanique` BOOL,
-`is_soutienscolaire` BOOL
+`NAME` VARCHAR(255) NULL
 )
 
-CREATE TABLE `categorie_ad` (
+
+
+CREATE TABLE `category_ad` (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 `categorie_id` INT NOT NULL,
 FOREIGN KEY (categorie_id) REFERENCES categorie(id),
