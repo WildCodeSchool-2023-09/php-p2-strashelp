@@ -8,7 +8,7 @@ class ReportManager extends AbstractManager
 {
     public const TABLE = 'report_ad';
 
-    public function selectAll(string $orderBy = '', string $direction = 'ASC'): array
+    public function selectReports(string $orderBy = '', string $direction = 'ASC'): array
     {
         $query = 'SELECT * FROM ' . static::TABLE;
         if ($orderBy) {

@@ -9,7 +9,7 @@ class ReportController extends AbstractController
     public function showReports()
     {
         $reportManager = new ReportManager();
-        $reports = $reportManager->selectAll();
+        $reports = $reportManager->selectReports();
 
         return $this->twig->render('Home/index.html.twig', ['reports' => $reports]);
     }

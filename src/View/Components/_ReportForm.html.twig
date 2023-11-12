@@ -7,7 +7,7 @@
             <p>Pourquoi signalez-vous cette publication ?</p>
                 <form action="" method="post">
                     {% for report in reports %}
-                    <ul><li>{{ report.id }}</li></ul>
+                    <ul><li>{{ report.report_reason }}</li></ul>
                     {#<input type="radio" name= {{ report.id }} checked>
                         <label for="test"> {{ report.report_reason }} </label>#}
                     {% endfor %}
