@@ -6,10 +6,11 @@
         <h2>Signalez une annonce</h2>
             <p>Pourquoi signalez-vous cette publication ?</p>
                 <form action="" method="post">
-                    <input type="radio" name="test" checked>
-                        {% for report in reports %}
-                            <label for="test"> {{ report.reason_report }} </label>
-                        {% endfor %}
+                    {% for report in reports %}
+                    <ul><li>{{ report.id }}</li></ul>
+                    {#<input type="radio" name= {{ report.id }} checked>
+                        <label for="test"> {{ report.report_reason }} </label>#}
+                    {% endfor %}
                         <div class="form-button">
                             <input type="submit" name="loginButton" value="Envoyez" class="button-1 login-submit">
                         </div>
