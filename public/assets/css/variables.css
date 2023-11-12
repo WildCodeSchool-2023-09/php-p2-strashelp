@@ -5,6 +5,7 @@
     --primary-color: #4CBFAA;
     --secondary-color: #F1AB91;
     --tertiary-color: #F05A56;
+    --quaterniary-color: #57BCCC;
     --p-color: #121212;
     --p-color-muted: #8D8D8D;
     --h-color: #003D32;
@@ -14,9 +15,10 @@
     --h3-size: 3rem;
     --h4-size: 2.25rem;
     --h5-size: 1.5rem;
-    --button-p-size: 1.75rem;
+    --button-p-size: 1.25rem;
     --p-size-desktop: 1rem;
     --p-size-mobile: 0.85rem;
+    --font-project: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     /* Effets */
     --border-radius-20: 0rem 1.25rem 0rem 1.25rem;
     --border-radius-40: 0rem 2.5rem 0rem 2.5rem;
@@ -25,24 +27,30 @@
 
 body {
     background-color: var(--light-color);
-    min-height: 100vh;
-    font-family: Poppins;
+    box-sizing: border-box;
 }
+
+main {
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+}
+
+/* Textes */
 
 p {
     color: var(--p-color);
-    font-family: Poppins;
+    font-family: var(--font-project);
     font-weight: 400;
-    line-height: 26px;
+    line-height: 1.5rem;
     font-size: var(--p-size-desktop);
     text-align: left;
 }
 
 p .italic {
     color: var(--p-color);
-    font-family: Poppins;
+    font-family: var(--font-project);
     font-weight: 400;
-    line-height: 26px;
+    line-height: 1.5rem;
     font-size: var(--p-size-desktop);
     text-align: left;
     font-style: italic;
@@ -50,9 +58,9 @@ p .italic {
 
 p>a {
     color: var(--primary-color);
-    font-family: Poppins;
+    font-family: var(--font-project);
     font-weight: 400;
-    line-height: 26px;
+    line-height: 1.5rem;
     font-size: var(--p-size-desktop);
     text-align: left;
     text-decoration: underline;
@@ -67,8 +75,8 @@ p>a {
     font-size: var(--button-p-size);
     border-radius: var(--border-radius-20);
     box-shadow: 0px 5px 25px rgba(75, 190, 169, .3);
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .button-1:hover {
@@ -77,7 +85,6 @@ p>a {
     font-size: var(--button-p-size);
     border-radius: var(--border-radius-20);
     box-shadow: 0px 5px 25px rgba(241, 171, 145, .3);
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-
