@@ -4,7 +4,7 @@ namespace App\Model;
 
 class UserManager extends AbstractManager
 {
-    public const TABLE = 'users';
+    public const TABLE = 'user';
     public array $credentials;
 
     /**
