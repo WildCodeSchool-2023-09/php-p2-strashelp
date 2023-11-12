@@ -13,4 +13,10 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'contact' => ['ContactController', 'contact',],
+    'deposeruneannonce' => ['DepotController','deposeruneannonce',],
+    'inscription' => ['InscriptionController','inscription',],
+    'connexion' => ['ConnexionController','connexion',],
+    'annonces' => ['AnnoncesController','annonces',],
+    'mentionlegales' => ['MentionLegalesController','mentionlegales',]
 ];
