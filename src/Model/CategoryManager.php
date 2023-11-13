@@ -17,6 +17,16 @@ class CategoryManager extends AbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
+
+    public function search(string $categorieName/*, string $searchBar*/)
+    {
+        $statement = $this->pdo->prepare('SELECT ad.* FROM ad LEFT JOIN category ON ad.category_id = category.id 
+        WHERE  category.name = :categorie /*OR 
+        WHERE searchBar LIKE :searchbar*/');
+        $statement->bindValue(':categorie', $categorieName);
+    /*    $statement->bindValue(':searchbar', $searchBar . "%");*/
+        return $statement->fetchAll();
+    }
 }
 //sauvegarder dans une variable de session. A foutre dans Abstract Controller une méthode
 //de récupération des catégories accessibles partout.

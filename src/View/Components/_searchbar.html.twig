@@ -1,16 +1,16 @@
 <section class="searchbar">
     <h3>Que recherchez-vous ?</h3>
-        <form action="" method="GET" class="essai">
+        <form action="/annonces" method="GET" class="essai">
 
             <div class="dropdown">
-                <select class="menuButton">
+                <select class="menuButton" name="categorie">
                     <option value="">Catégorie</option>
-                        {% for categorie in categories %}
-                        <option  class="dropdown-child" value="">{{ categorie.name }}</option>
+                        {% for category in categories %}
+                        <option  class="dropdown-child" value={{ category.name }}>{{ category.name }}</option>
                         {% endfor %}
                 </select>
             </div>
-                <input type= "search" placeholder="Entrez votre recherche">
+                <input type= "search" name="searchbar" placeholder="Entrez votre recherche">
                 <input type="submit" class="button-1 login-submit" name="sendSearch" value="Rechercher">
         </form>
 </section>
