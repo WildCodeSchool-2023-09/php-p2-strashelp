@@ -2,8 +2,6 @@
 
 namespace App\Model;
 
-use PDO;
-
 class ReportManager extends AbstractManager
 {
     public const TABLE = 'report_ad';
@@ -16,5 +14,14 @@ class ReportManager extends AbstractManager
         }
 
         return $this->pdo->query($query)->fetchAll();
+    }
+
+    public function insertReports(array $reportAd)
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`report_reason`) VALUES (:report_reason)");
+        $statement->bindValue(':report_reason', $reportAd['report_reason'], \PDO::PARAM_STR);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
     }
 }

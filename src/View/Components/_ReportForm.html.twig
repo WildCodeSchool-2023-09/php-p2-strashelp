@@ -4,13 +4,17 @@
 <button class="uk-modal-close-default" type="button" uk-close></button>
     <div class="report">
         <h2>Signalez une annonce</h2>
-            <p>Pourquoi signalez-vous cette publication ?</p>
+            <p>Pourquoi souhaitez-vous signaler cette publication ?</p>
                 <form action="" method="post">
+                <div class ="reportChoice">
                     {% for report in reports %}
-                    <li>{{ report.report_reason }}</li>
-                    {#<input type="radio" name= {{ report.id }} checked>
-                        <label for="test"> {{ report.report_reason }} </label>#}
+                        <label for="test"> 
+                            <input type="radio" name="test" value= {{ report.id }}>
+                                {{ report.report_reason }} 
+                        </label>
+                        <br>
                     {% endfor %}
+                </div>
                         <div class="form-button">
                             <input type="submit" name="loginButton" value="Envoyez" class="button-1 login-submit">
                         </div>

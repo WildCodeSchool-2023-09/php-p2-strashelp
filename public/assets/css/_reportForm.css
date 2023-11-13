@@ -31,11 +31,6 @@
     margin-bottom: 0;
 }
 
-select {
-    font-size: 0.9rem;
-    padding: 2px 5px;
-}
-
 .form-button{
     display: flex;
     width:87%;

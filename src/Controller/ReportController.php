@@ -13,4 +13,12 @@ class ReportController extends AbstractController
 
         return $this->twig->render('Home/index.html.twig', ['reports' => $reports]);
     }
+
+    /*public function insertReport()
+    {
+        $adsReport = new ReportManager();
+        $adsReportManager = $adsReport-> selectReports();
+
+        return null;
+    }*/
 }
