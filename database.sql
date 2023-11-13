@@ -65,15 +65,16 @@ CREATE TABLE `ad` (
 `localisation` VARCHAR(150) NOT NULL,
 `published_date` date,
 `user_id` INT NOT NULL,
-FOREIGN KEY (users_id) REFERENCES users(id)
+FOREIGN KEY (user_id) REFERENCES user(id),
+`category_id` INT NOT NULL,
+FOREIGN KEY (category_id) REFERENCES category(id),
+`ad_type_id` INT NOT NULL,
+ADD FOREIGN KEY (ad_type_id) REFERENCES ad_type(id)
 )
 
-CREATE TABLE `offer_user` (
-id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`user_id` INT NOT NULL,
-FOREIGN KEY (user_id) REFERENCES user(id),
-`ad_id` INT NOT NULL,
-FOREIGN KEY (ad_id) REFERENCES ad(id)
+CREATE TABLE `ad_type` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `name` VARCHAR(100) NOT NULL
 )
 
 CREATE TABLE `image` (
@@ -84,16 +85,7 @@ FOREIGN KEY (ad_id) REFERENCES ad(id)
 )
 
 CREATE TABLE `category` (
-id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`NAME` VARCHAR(255) NULL
+`id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`name` VARCHAR(255) NOT NULL
 )
 
-
-
-CREATE TABLE `category_ad` (
-id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`categorie_id` INT NOT NULL,
-FOREIGN KEY (categorie_id) REFERENCES categorie(id),
-`ad_id` INT NOT NULL,
-FOREIGN KEY (ad_id) REFERENCES ad(id)
-)
