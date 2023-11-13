@@ -38,8 +38,14 @@ FOREIGN KEY (user_id) REFERENCES user(id)
 CREATE TABLE `report_ad`(
 `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 `report_reason` VARCHAR(255) DEFAULT NULL,
-`user_id` INT NULL,
-FOREIGN KEY (user_id) REFERENCES user(id)
+`ad_id` INT NULL,
+FOREIGN KEY (ad_id) REFERENCES ad(id)
+)
+
+CREATE TABLE `signal_report` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `report_ad_id` INT NULL,
+    FOREIGN KEY (report_ad_id) REFERENCES report_ad(id)
 )
 
 CREATE TABLE `user` (
@@ -69,7 +75,7 @@ FOREIGN KEY (user_id) REFERENCES user(id),
 `category_id` INT NOT NULL,
 FOREIGN KEY (category_id) REFERENCES category(id),
 `ad_type_id` INT NOT NULL,
-ADD FOREIGN KEY (ad_type_id) REFERENCES ad_type(id)
+FOREIGN KEY (ad_type_id) REFERENCES ad_type(id)
 )
 
 CREATE TABLE `ad_type` (
