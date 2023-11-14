@@ -4,7 +4,7 @@ namespace App\Model;
 
 class AnnoncesManager extends AbstractManager
 {
-    public const TABLE = 'ads';
+    public const TABLE = 'ad';
 
     public function selectAll(string $orderBy = 'published_date', string $direction = 'DESC'): array
     {
