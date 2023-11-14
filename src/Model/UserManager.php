@@ -42,9 +42,9 @@ class UserManager extends AbstractManager
 
     public function selectOneByIdentifiant($identifiant): array
     {
-        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE .
-        " WHERE email=:identifiant OR username=:identifiant");
-        $statement->bindValue(':identifiant', $identifiant, \PDO::PARAM_STR);
+        $statement = $this->pdo->prepare("SELECT * FROM "
+         . static::TABLE . " WHERE username=:identifiant OR email =:identifiant");
+        $statement->bindValue(':identifiant', $identifiant);
         $statement->execute();
 
         return $statement->fetch();

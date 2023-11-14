@@ -29,7 +29,7 @@
 body {
     background-color: var(--light-color);
     min-height: 100vh;
-    font-family: Poppins;
+    font-family: var(--font-project);
 }
 
 p {
