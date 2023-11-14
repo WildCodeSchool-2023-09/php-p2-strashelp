@@ -18,6 +18,5 @@ return [
     'inscription' => ['InscriptionController','inscription',],
     'connexion' => ['ConnexionController','connexion',],
     'annonces' => ['AnnoncesController','annonces',],
-    'mentionlegales' => ['MentionLegalesController','mentionlegales',],
-    'contact' => ['ContactController', 'contact'],
+    'mentionlegales' => ['MentionLegalesController','mentionlegales',],    
 ];
