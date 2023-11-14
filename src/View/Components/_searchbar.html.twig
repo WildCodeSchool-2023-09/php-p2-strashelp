@@ -6,7 +6,7 @@
                 <select class="menuButton" name="categorie">
                     <option value="">Catégorie</option>
                         {% for category in categories %}
-                        <option  class="dropdown-child" value={{ category.name }}>{{ category.name }}</option>
+                            <option  class="dropdown-child" value={{ category.name }}>{{ category.name }}</option>
                         {% endfor %}
                 </select>
             </div>
