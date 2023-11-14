@@ -2,7 +2,7 @@
     <h3>Que recherchez-vous ?</h3>
         <form action="/annonces" method="GET" class="essai">
 
-            <div class="dropdown">
+            <div class="dropdown uk-width-1-4">
                 <select class="menuButton" name="categorie">
                     <option value="">Catégorie</option>
                         {% for category in categories %}
@@ -10,7 +10,7 @@
                         {% endfor %}
                 </select>
             </div>
-                <input type= "search" name="searchbar" placeholder="Entrez votre recherche">
-                <input type="submit" class="button-1 login-submit" name="sendSearch" value="Rechercher">
+                <input type= "search" name="searchbar" placeholder="Entrez votre recherche" class="searchInput uk-width-2-4">
+                <input type="submit" class="button-1 login-submit  uk-width-1-4" name="sendSearch" value="Rechercher">
         </form>
 </section>

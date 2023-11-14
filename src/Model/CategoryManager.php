@@ -28,5 +28,3 @@ class CategoryManager extends AbstractManager
         return $statement->fetchAll();
     }
 }
-//sauvegarder dans une variable de session. A foutre dans Abstract Controller une méthode
-//de récupération des catégories accessibles partout.
