@@ -2,6 +2,7 @@
 
 namespace App\controller;
 
+use App\Model\ContactManager;
 use App\Controller\AbstractController;
 
 class ContactController extends AbstractController
@@ -11,8 +12,6 @@ class ContactController extends AbstractController
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentialsContact = array_map('trim', $_POST);
-            $credentialsContact = array_map('htmlentities', $credentialsContact);
-
             if (!isset($credentialsContact['email']) || empty($credentialsContact['email'])) {
                 $errors['email'] = 'champ obligatoire';
             }
