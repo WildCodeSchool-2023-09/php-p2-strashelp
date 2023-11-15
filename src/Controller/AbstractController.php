@@ -25,14 +25,5 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
-        $this->twig->addGlobal('adtypes', $this->showAdType());
-    }
-
-    public function showAdType()
-    {
-        $showAdTypes = new AnnonceManager();
-        $adtypes = $showAdTypes->adType();
-
-        return $adtypes;
     }
 }
