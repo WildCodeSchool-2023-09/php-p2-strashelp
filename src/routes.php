@@ -19,5 +19,6 @@ return [
     'connexion' => ['ConnexionController','connexion',],
     'annonces' => ['AnnoncesController','annonces',],
     'annonces/delete' => ['AnnoncesController','delete',['id']],
-    'mentionlegales' => ['MentionLegalesController','mentionlegales',]
+    'mentionlegales' => ['MentionLegalesController','mentionlegales',],
+    'user/delete' => ['UserController','delete',['id']],
 ];
