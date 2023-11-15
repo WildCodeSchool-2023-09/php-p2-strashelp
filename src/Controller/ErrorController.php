@@ -6,7 +6,7 @@ use App\Controller\AbstractController;
 
 class ErrorController extends AbstractController
 {
-    public function Error()
+    public function error()
     {
         return $this->twig->render("Error/Error.html.twig");
     }
