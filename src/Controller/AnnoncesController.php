@@ -9,7 +9,7 @@ class AnnoncesController extends AbstractController
     public function annonce(): string
     {
         $annoncesList = new AnnoncesManager();
-        $annonces = $annoncesList->selectAll();
+        $annonces = $annoncesList->selectAllAd();
 
         return $this->twig->render('Annonces/card.html.twig', ['annonces' => $annonces]);
     }
