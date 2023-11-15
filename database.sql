@@ -77,11 +77,15 @@ FOREIGN KEY (users_id) REFERENCES users(id)
 
 CREATE TABLE `ReportAds`(
 `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`Inappropriated_content` BOOL,
-`categorie_Error` BOOL,
-`Baking_infos` BOOL,
-`users_id` INT NULL,
-FOREIGN KEY (users_id) REFERENCES users(id)
+`report_reason` VARCHAR(255) DEFAULT NULL,
+`ad_id` INT NULL,
+FOREIGN KEY (ad_id) REFERENCES ad(id)
+)
+
+CREATE TABLE `signal_report` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `report_ad_id` INT NULL,
+    FOREIGN KEY (report_ad_id) REFERENCES report_ad(id)
 )
 
 CREATE TABLE `Users` (
@@ -106,16 +110,17 @@ CREATE TABLE `Ads` (
 `username` VARCHAR(100) NOT NULL,
 `localisation` VARCHAR(150) NOT NULL,
 `published_date` date,
-`users_id` INT NOT NULL,
-FOREIGN KEY (users_id) REFERENCES users(id)
+`user_id` INT NOT NULL,
+FOREIGN KEY (user_id) REFERENCES user(id),
+`category_id` INT NOT NULL,
+FOREIGN KEY (category_id) REFERENCES category(id),
+`ad_type_id` INT NOT NULL,
+FOREIGN KEY (ad_type_id) REFERENCES ad_type(id)
 )
 
-CREATE TABLE `Offer_users` (
-id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`users_id` INT NOT NULL,
-FOREIGN KEY (users_id) REFERENCES users(id),
-`ads_id` INT NOT NULL,
-FOREIGN KEY (ads_id) REFERENCES ads(id)
+CREATE TABLE `ad_type` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `name` VARCHAR(100) NOT NULL
 )
 
 CREATE TABLE `Images` (
@@ -125,20 +130,7 @@ id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 FOREIGN KEY (ads_id) REFERENCES ads(id)
 )
 
-CREATE TABLE `Categories` (
-id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`is_jardinage` BOOL,
-`is_bricolage` BOOL,
-`is_mecanique` BOOL,
-`is_soutienscolaire` BOOL
+CREATE TABLE `category` (
+`id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`name` VARCHAR(255) NOT NULL
 )
-
-CREATE TABLE `CategorieAds` (
-id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`categories_id` INT NOT NULL,
-FOREIGN KEY (categories_id) REFERENCES categories(id),
-`ads_id` INT NOT NULL,
-FOREIGN KEY (ads_id) REFERENCES ads(id)
-)
-
-insert into `ads` (title, image, description, ads_type, username, localisation, published_date, users_id) VALUES ('jardin', 'assetimage', 'une belle moto', '1', 'Zama', 'bordeaux', '2023-10-10', '1')
