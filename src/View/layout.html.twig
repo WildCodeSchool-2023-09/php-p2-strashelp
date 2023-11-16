@@ -9,8 +9,8 @@
 		<title>
 			{% block title %}{% endblock %}
 		</title>
-        <link rel="stylesheet" href="/assets/css/style.css"> 
 		{% block stylesheet %}
+			<link rel="stylesheet" href="/assets/css/style.css"> 
 		    <link rel="stylesheet" href="/assets/css/dashboard.css"> 
 		{% endblock %}
 		</head>
@@ -20,8 +20,9 @@
 				{% include'Components/gestion-des-categories.html.twig' %}
 			{% endblock %}
 			{% include'Components/_footer.html.twig' %}
-			{% block javascript %}{% endblock %}
+			{% block javascript %}
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit-icons.min.js"></script>
+			{% endblock %}
 		</body>
 	</html>
