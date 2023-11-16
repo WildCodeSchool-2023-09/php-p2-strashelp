@@ -52,13 +52,11 @@ class UserController extends AbstractController
                 return json_encode(['errorsRegister' => $errorsRegister]);
             }
 
-            if (!$errorsRegister) {
                 $userManager = new UserManager();
-                if ($userManager->insert($credentials)) {
-                    return json_encode(['status' => 'success', 'message_success_register' => 'Enregistrement réussi']);
-                } else {
-                    return json_encode(['status' => 'error', 'message_error_register' => 'erreur']);
-                }
+            if ($userManager->insert($credentials)) {
+                return json_encode(['status' => 'success', 'message_success_register' => 'Enregistrement réussi']);
+            } else {
+                return json_encode(['status' => 'error', 'message_error_register' => 'erreur']);
             }
         }
     }
