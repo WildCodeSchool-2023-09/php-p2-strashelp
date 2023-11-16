@@ -1,14 +1,20 @@
 <?php
 
-namespace App\controller;
+namespace App\Controller;
+
 
 use App\Controller\AbstractController;
 use App\Model\CategoryManager;
+use App\Model\AnnoncesManager;
+
 
 class AnnoncesController extends AbstractController
 {
-    public function annonces()
+    public function annonce(): string
     {
-        return $this->twig->render("annonces/_annonces.html.twig");
+        $annoncesList = new AnnoncesManager();
+        $annonces = $annoncesList->selectAllAd();
+
+        return $this->twig->render('Annonces/card.html.twig', ['annonces' => $annonces]);
     }
 }
