@@ -8,7 +8,7 @@ class UserController extends AbstractController
 {
     public function register()
     {
-            $errorsRegister = [];
+        $errorsRegister = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentials = array_map('trim', $_POST);
 
@@ -52,7 +52,7 @@ class UserController extends AbstractController
                 return json_encode(['errorsRegister' => $errorsRegister]);
             }
 
-                $userManager = new UserManager();
+            $userManager = new UserManager();
             if ($userManager->insert($credentials)) {
                 return json_encode(['status' => 'success', 'message_success_register' => 'Enregistrement réussi']);
             } else {
@@ -61,36 +61,36 @@ class UserController extends AbstractController
         }
     }
 
-    public function login(): string
+    public function login()
     {
-        $errors = [];
+        $errorsLogin = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $credentials = array_map('trim', $_POST);
-            $credentials = array_map('htmlentities', $credentials);
+            $credentialsLogin = array_map('trim', $_POST);
+            $credentialsLogin = array_map('htmlentities', $credentialsLogin);
 
-            if (!isset($credentials['identifiant']) || empty($credentials['identifiant'])) {
-                $errors['identifiant'] = 'Veuillez rentrer votre pseudo ou adresse mail.';
+            if (!isset($credentialsLogin['identifiant']) || empty($credentialsLogin['identifiant'])) {
+                $errorsLogin['identifiant'] = 'Veuillez rentrer votre pseudo ou adresse mail.';
             }
 
-            if (!isset($credentials['password']) || empty($credentials['password'])) {
-                $errors['password'] = 'Veuillez saisir votre mot de passe.';
+            if (!isset($credentialsLogin['password']) || empty($credentialsLogin['password'])) {
+                $errorsLogin['password'] = 'Veuillez saisir votre mot de passe.';
             }
 
-            if (empty($errors)) {
-                $userManager = new UserManager();
-                $users = $userManager->selectOneByIdentifiant($credentials['identifiant']);
+            if ($errorsLogin) {
+                return json_encode(['errorsLogin' => $errorsLogin]);
+            }
 
-                if ($users && password_verify($credentials['password'], $users['password'])) {
-                    $_SESSION['user_id'] = $users['id'];
-                    header('Location: /login');
-                    exit();
-                } else {
-                    echo 'Mdp invalide';
-                }
+
+            $userManager = new UserManager();
+            $users = $userManager->selectOneByIdentifiant($credentialsLogin['identifiant']);
+            if ($users && password_verify($credentialsLogin['password'], $users['password'])) {
+                $_SESSION['user_id'] = $users['id'];
+                return json_encode(['status_login' => 'success', 'message_success' => 'Connexion réussie']);
+            } else {
+                return json_encode(['status_login' => 'errors', 'message_error' => 'Erreur connexion']);
             }
         }
-        return $this->twig->render('Home/index.html.twig', ['errors' => $errors]);
     }
 
     public function logout()
