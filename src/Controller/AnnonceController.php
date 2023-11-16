@@ -11,6 +11,6 @@ class AnnoncesController extends AbstractController
         $annoncesList = new AnnoncesManager();
         $annonces = $annoncesList->selectAllAd();
 
-        return $this->twig->render('Annonces/card.html.twig', ['annonces' => $annonces]);
+        return $this->twig->render('Components/card.html.twig', ['annonces' => $annonces]);
     }
 }
