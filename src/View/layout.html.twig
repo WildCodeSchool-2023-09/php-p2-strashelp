@@ -13,10 +13,12 @@
 		</head>
 		<body>
 			{% include'Components/_navbar.html.twig' %}
-            {% block content %}{% endblock %}
+            {% block content %}{% endblock %} 
 			{% include'Components/_footer.html.twig' %}
 			{% block javascript %}{% endblock %}
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit-icons.min.js"></script>
+		    <script src="/js/dark-mode.js"></script>
+			<script src="/js/easter-egg.js"></script>
 		</body>
 	</html>

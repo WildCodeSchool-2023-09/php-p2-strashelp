@@ -5,9 +5,11 @@
     --primary-color: #4CBFAA;
     --secondary-color: #F1AB91;
     --tertiary-color: #F05A56;
+    --bg-dark: #1C1C1C;
     --p-color: #121212;
     --p-color-muted: #8D8D8D;
     --h-color: #003D32;
+    --lightDark-color:white !important;
     /* Titres et texte */
     --h1-size: 4.5rem;
     --h2-size: 3.75rem;
