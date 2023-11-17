@@ -4,9 +4,6 @@
     flex-direction: row;
     color: var(--primary-color);
 }
-
-   
-
 .uk-navbar-nav>li>a {
     color: var(--primary-color);
     font-weight: 400;
@@ -15,17 +12,14 @@
     font-weight:500;
 }     
 .uk-navbar-left, a {
-    margin-right: 1rem;
-   
+    margin-right: 1rem;  
 }
 .uk-navbar-nav>li>a:hover{
     color:var(--tertiary-color);
-
 }
 .uk-navbar-nav>li>a:active{
  color:var(--light-color);
 }
-
 .uk-button {
     background-color: var(--primary-color);
     color: var(--light-color);
