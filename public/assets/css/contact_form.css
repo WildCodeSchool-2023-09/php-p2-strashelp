@@ -1,26 +1,33 @@
-.container {
-    width: 30%;
-    height: 60vh;
+.section-register {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;    
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    margin: auto;
+}
+
+.container-register {   
     display: flex;
     flex-direction: column;
-    margin-left:15%;
+    
     align-content: center;
     background-color: var(--dark-color);
     padding: 70px 90px 70px 90px;
     border-radius: var(--border-radius-80);          
 }
 
-.uk-link, .uk-link:hover, a {
-    color : var(--tertiary-color);
+.uk-modal-close-default {
+    top: 2vh;
+    right: 2vw;
+    position: fixed;
+    color: var(--tertiary-color);
+    stroke-width: 20px;
 }
 
-section {
-    height: auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    
-    background-color: rgba(255, 255, 255, 0.7);
+.uk-link, .uk-link:hover, a {
+    color : var(--tertiary-color);
 }
 
 .uk-flex .uk-flex-right {
@@ -30,7 +37,7 @@ section {
     
 }
 
-h2 {
+.section-register h2 {
     color: var(--primary-color);
     font-size: var(--h2-size);
     font-weight: 600;
@@ -51,7 +58,7 @@ h2 {
     margin-top: 1.5rem;
 }
 
-.div2 { 
+.input-register-firstname { 
     padding-left: 10px;    
 }
 
@@ -96,6 +103,25 @@ h2 {
     border-radius: var(--border-radius-20);
     border: 0.25rem solid;
     border-color: var(--secondary-color);    
+}
+
+.uk-modal-close-default {
+    margin-right: 1vw;
+    margin-top: 2vh;
+}
+
+.uk-modal-close-default line {
+    stroke-width: 0.15rem;
+    stroke: var(--tertiary-color);
+}
+
+.uk-modal-close-default svg {
+    width: 25px;
+    height: 25px;
+}
+
+.uk-modal-close-default line::selection {
+    stroke: red;
 }
 
 @media screen and (max-width: 1200px)
