@@ -10,9 +10,8 @@ class CategoryManager extends AbstractManager
 
     public function insertCategory(array $addCategory): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`) VALUES (:newCategory)");
-        $statement->bindValue(':newCategory', $addCategory['newCategory'], PDO::PARAM_STR);
-
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`) VALUES (:ajout)");
+        $statement->bindValue(':ajout', $addCategory['ajout'], PDO::PARAM_STR);
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }

@@ -7,11 +7,12 @@
         <p class="description_dashboard uk-align-center">Vous pourrez depuis ici ajouter ou supprimer une catégorie, la liste compléte y est inscrite ici.</p>
     </div>
     <!-- Ajout d'une nouvelle catégorie -->
-    <form class="uk-width-2-3 uk-align-center">
+    <form class="uk-width-2-3 uk-align-center" method="POST">
     <fieldset class="uk-fieldset">
-        <legend class="uk-legend">Ajoutez ici une nouvelle catégorie</legend>
+        <legend class="uk-legend"> Ajoutez ici une nouvelle catégorie</legend>
         <div class="uk-margin">
-            <input class="uk-input input_ajout-category" type="text" placeholder="Nom de la nouvelle catégorie..." aria-label="Input" name="newCategory">
+            <input class="uk-input input_ajout-category" type="text" placeholder="Nom de la nouvelle catégorie..." aria-label="Input" name="ajout">
+                {{ error.ajout }}
         </div>
         <input class="uk-button uk-button-default uk-align-left uk-width-auto button_ajouter" type="submit" value="Ajouter la catégorie">
     </fieldset>
@@ -28,10 +29,12 @@
     </thead>
     <tbody>
         <tr>
-            <td class="td_gestion-des-categories uk-width-small">1</td>
-            <td class="td_gestion-des-categories uk-width-expand">Nom de la catégorie</td>
+            {% for category in categories %} 
+            <td class="td_gestion-des-categories uk-width-small"> {{ category.id }}</td>
+            <td class="td_gestion-des-categories uk-width-expand"> {{ category.name }} </td>
+            {% endfor %}
             <td><a href="" class="uk-button uk-button-default uk-flex uk-flex-middle button_supprimer" type="submit">Supprimer</a>
-</td>
+            </td>
         </tr>
     </tbody>
 </table>

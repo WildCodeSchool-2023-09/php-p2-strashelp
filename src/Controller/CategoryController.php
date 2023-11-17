@@ -6,29 +6,42 @@ use App\Model\CategoryManager;
 
 class CategoryController extends AbstractController
 {
-    public function add(): ?string
+    public function addCategory(): ?string
     {
+        $errors = [];
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $newCategory = array_map('trim', $_POST);
 
+            if (!isset($newCategory['ajout']) || empty($newCategory['ajout'])) {
+                $errors['ajout'] = "Veuillez remplir le champ.";
+            }
+
+            if (empty($error)) {
             $newCategoryManager = new CategoryManager();
-            $id = $newCategoryManager->insertCategory($newCategory);
+            $newCategoryManager->insertCategory($newCategory);
 
-            header('Location:/items/show?id=' . $id);
+            header('Location:/Admin/category');
             return null;
+            }
         }
 
-        return $this->twig->render('Item/add.html.twig');
+        return $this->twig->render('Admin/gestion-des-categories.html.twig', ['errors' => $errors]);
     }
 
-    public function delete(): void
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id = trim($_POST['id']);
-            $itemManager = new CategoryManager();
-            $itemManager->delete((int)$id);
+        public function showCategory(): string
+        {
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectAll();
 
-            header('Location:/items');
+        return $this->twig->render('Admin/gestion-des-categories.html.twig', ['categories' => $categories]);
         }
-    }
+
+        public function delete($id)
+        {
+            $categoryManager = new CategoryManager();
+            $categoryManager->delete($id);
+    
+            header('location:/Admin/category');
+        }
 }
