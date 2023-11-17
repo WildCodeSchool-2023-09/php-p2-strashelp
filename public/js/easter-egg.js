@@ -1,5 +1,5 @@
 function easterEgg() {
-    alert('Disponible chez vous a tout moment!');
+    alert('Disponible chez vous a tout moment pour diverses travaux!');
  changeImage();
 setTimeout(changeLogo, 5000)
 }
