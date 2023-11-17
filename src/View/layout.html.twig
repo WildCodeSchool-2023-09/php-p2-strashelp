@@ -9,8 +9,8 @@
 		<title>
 			{% block title %}{% endblock %}
 		</title>
-		<link rel="stylesheet" href="/assets/css/mentionlegales.css">
-        <link rel="stylesheet" href="/assets/css/style.css"> {% endblock %}
+		
+        {% block stylesheet %}<link rel="stylesheet" href="/assets/css/style.css"> {% endblock %}
 		</head>
 		<body>
 			{% include'Components/_navbar.html.twig' %}
