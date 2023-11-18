@@ -17,7 +17,9 @@ return [
     'deposeruneannonce' => ['DepotController','deposeruneannonce',],
     'inscription' => ['InscriptionController','inscription',],
     'connexion' => ['ConnexionController','connexion',],
-    //'annonces' => ['AnnoncesController','annonces',],
+    'annonces' => ['AnnoncesController','annonces',],
     'annonces' => ['CategoryController', 'searchAd', ['categorie', 'searchbar']],
     'mentionlegales' => ['MentionLegalesController','mentionlegales',]
+    'register' => ['UserController', 'register',],
+    'login' => ['UserController', 'login',],
 ];
