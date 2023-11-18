@@ -15,4 +15,9 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     '_searchbar' => ['CategoryController', 'showCategory',],
     'report' => ['ReportController', 'showReports',],
+    'contact' => ['ContactController', 'contact',],
+    'annonces' => ['AnnonceController','annonces',],
+    'mentionlegales' => ['MentionLegalesController','mentionlegales',],
+    'register' => ['UserController', 'register',],
+    'login' => ['UserController', 'login'],
 ];
