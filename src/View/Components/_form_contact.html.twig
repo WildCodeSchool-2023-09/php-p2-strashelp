@@ -1,0 +1,16 @@
+<section>
+	<div class="container">
+		<h2>Contactez-nous</h2>
+		<form action="" method="POST">
+			<input class="uk-input form_contact " type="text" placeholder=" {{ errors ?  errors.email  :  " adresse mail" }} " name="email">
+			<div class="uk-child-width-expand@s form_contact" uk-grid>
+				<input class="uk-input div2" type="text" placeholder="{{ errors ? errors.firstname : "Prénom" }}" name="firstname">
+				<input class="uk-input div3" type="text" placeholder="{{ errors ? errors.lastname : "Nom" }}" name="lastname">
+			</div>
+			<textarea class="uk-textarea form_contact" placeholder="{{ errors ? errors.message : "Votre message ..." }}" name="message"></textarea>
+			<div class="uk-flex uk-flex-right">
+				<input type="submit" class="button-1 form_contact button_contact">
+			</div>
+		</form>
+	</div>
+</section>

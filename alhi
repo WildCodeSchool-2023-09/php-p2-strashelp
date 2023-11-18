@@ -1,0 +1,156 @@
+[33mcommit 8c4420b141862fb6f7f75d00661be2923b970b5b[m[33m ([m[1;36mHEAD -> [m[1;32mdarkMode[m[33m, [m[1;31morigin/darkMode[m[33m)[m
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Fri Nov 17 17:07:53 2023 +0100
+
+    ok
+
+[33mcommit 483e52f53a019d94ad710d22a2547bbcafa5532a[m
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Fri Nov 17 16:31:18 2023 +0100
+
+    a pas prendre en compte
+
+[33mcommit 46419c3509b4b1f80a05bca0fd098739a596b125[m
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Fri Nov 17 14:28:55 2023 +0100
+
+    a
+
+[33mcommit 2a5ebabaa5fe401e3b4f072058ebe155fe79aa7d[m
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Thu Nov 16 16:53:22 2023 +0100
+
+    dark-mode et easter-egg
+
+[33mcommit 1be0a0402ef62f2f959dea005d03440facb2c0dc[m
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Wed Nov 15 20:39:06 2023 +0100
+
+    user-delete
+
+[33mcommit 45de331292455a5e46eebe83ec09ac9dd84dfe7e[m[33m ([m[1;31morigin/fonctionsupprimeannonce[m[33m, [m[1;32mfonctionsupprimeannonce[m[33m)[m
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Wed Nov 15 17:05:26 2023 +0100
+
+    ok
+
+[33mcommit cb3d703b8f0b160f10f00e67fdfb776c4dd4f6ad[m
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Wed Nov 15 15:22:58 2023 +0100
+
+    bouton a relier
+
+[33mcommit 0d7b08ad17ccb892755670bd0fdf5f85b89c9242[m
+Merge: 9087f25 152f98f
+Author: Yavuz KUTUK <yavuz@kutuk.fr>
+Date:   Tue Nov 14 16:57:12 2023 +0100
+
+    Merge pull request #9 from WildCodeSchool-2023-09/DB_Strashelp
+    
+    Db strashelp
+
+[33mcommit 152f98ffb705f510f5f389041d4d187dfc6a711d[m[33m ([m[1;31morigin/DB_Strashelp[m[33m)[m
+Author: Elise <elise.chaldjian@gmail.com>
+Date:   Mon Nov 13 19:03:06 2023 +0100
+
+    Finalisation BDD
+
+[33mcommit 122991b926428940cdab4afeeb0de19b9a1355e5[m
+Author: Elise <elise.chaldjian@gmail.com>
+Date:   Mon Nov 13 17:20:45 2023 +0100
+
+    Modification BDD
+
+[33mcommit 9b9882b0ccc8870670097d66ff1e51660db8836f[m
+Author: Elise <elise.chaldjian@gmail.com>
+Date:   Sat Nov 11 18:35:22 2023 +0100
+
+    Modification des tables category et report_ad
+
+[33mcommit 9087f25b25f34925201bd0cdfe4d7de379ad2d17[m
+Merge: 963aaa4 5fd2103
+Author: vincentr-wcs <144324500+vincentr-wcs@users.noreply.github.com>
+Date:   Fri Nov 10 11:49:13 2023 +0100
+
+    Merge pull request #3 from WildCodeSchool-2023-09/_login
+    
+    Réalisation login
+
+[33mcommit 5fd21038c365b6ecef1cbf4bfa7bd9ccc904903e[m
+Author: Elise <elise.chaldjian@gmail.com>
+Date:   Thu Nov 9 11:34:07 2023 +0100
+
+    blabla logout
+
+[33mcommit 963aaa4692ca34b282817d8bc00f90f3e2c27c63[m
+Merge: 4892fff 6206824
+Author: vincentr-wcs <144324500+vincentr-wcs@users.noreply.github.com>
+Date:   Thu Nov 9 10:30:42 2023 +0100
+
+    Merge pull request #2 from WildCodeSchool-2023-09/Navbar-footer
+    
+    ok
+
+[33mcommit 620682474212751950e0bcb7036916ef2434a6d3[m
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Thu Nov 9 09:31:13 2023 +0100
+
+    fait
+
+[33mcommit e96d92b6a1ececadd22e614a888aa835f46d1585[m
+Author: Elise <elise.chaldjian@gmail.com>
+Date:   Wed Nov 8 16:24:27 2023 +0100
+
+    Modifications login finally, 85 years later
+
+[33mcommit 412ebc42eb78b4eded8026aa137d8549de1a53ef[m
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Wed Nov 8 15:36:59 2023 +0100
+
+    ok
+
+[33mcommit f95f75dc9e634c4c50272c640789c1e70fa50495[m[33m ([m[1;32mbdd[m[33m)[m
+Merge: ac4a59a 4892fff
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Wed Nov 8 09:37:26 2023 +0100
+
+    Merge branch 'dev' of https://github.com/WildCodeSchool-2023-09/php-p2-strashelp into Navbar-footer
+
+[33mcommit 4892fff2be9ca446807a06374d48119baded15e0[m
+Merge: 1d3d07a 560d7e1
+Author: vincentr-wcs <144324500+vincentr-wcs@users.noreply.github.com>
+Date:   Tue Nov 7 13:52:03 2023 +0100
+
+    Merge pull request #1 from WildCodeSchool-2023-09/DB_Strashelp
+    
+    Envoi BDD projet
+
+[33mcommit 560d7e1f7304072a5f6ebbde70c5290980f74939[m
+Author: Elise <elise.chaldjian@gmail.com>
+Date:   Tue Nov 7 12:19:55 2023 +0100
+
+    Correction database
+
+[33mcommit a1cbb590f11e4a222da6f634e8dc72d8e2dba05f[m[33m ([m[1;31morigin/_login[m[33m)[m
+Author: Elise <elise.chaldjian@gmail.com>
+Date:   Mon Nov 6 17:45:22 2023 +0100
+
+    Réalisation login
+
+[33mcommit ac4a59aaa9e1ea74643b5c060cda4f41cb5ea730[m
+Author: Sajid Salhi <sajid.s35400@gmail.com>
+Date:   Mon Nov 6 17:00:06 2023 +0100
+
+    ok
+
+[33mcommit b9fd65509eb0ae04c109c0bee8374aae0c699be6[m
+Author: Elise <elise.chaldjian@gmail.com>
+Date:   Mon Nov 6 16:14:40 2023 +0100
+
+    Envoi BDD projet
+
+[33mcommit 1d3d07a29e993e31c2c3900734c4ba7659eee6b0[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Yavuz KUTUK <yavuz@kutuk.fr>
+Date:   Wed Oct 25 11:33:41 2023 +0200
+
+    Initial commit
