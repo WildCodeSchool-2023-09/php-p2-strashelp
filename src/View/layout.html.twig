@@ -10,14 +10,25 @@
 		<title>
 			{% block title %}{% endblock %}
 		</title>
-        <link rel="stylesheet" href="/assets/css/style.css"> {% block stylesheet %}{% endblock %}
-		</head>
-		<body>
-			{% include'Components/_navbar.html.twig' %}
-            {% block content %}{% endblock %}
-			{% include'Components/_footer.html.twig' %}
-			{% block javascript %}{% endblock %}
+
+		{% block stylesheet %}
+			<link rel="stylesheet" href="/assets/css/style.css">
+			<link rel="stylesheet" href="/assets/css/stylenavbar.css">
+			<link rel="stylesheet" href="/assets/css/stylefooter.css">
+			<link rel="stylesheet" href="/assets/css/_login.css">
+		{% endblock %}
+	</head>
+	<body>
+		
+		{% include 'Components/_navbar.html.twig' %}
+		{% include 'Components/_login.html.twig' %}
+		{% include 'Components/_form_register.html.twig' %}
+		{% include 'Components/_footer.html.twig' %}		
+		{% block content %}		
+		{% endblock %}
+		{% block javascript %}
+			<script src="/assets/JS/script.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit.min.js"></script>
-			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit-icons.min.js"></script>
-		</body>
-	</html>
+		{% endblock %}
+	</body>
+</html>
