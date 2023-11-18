@@ -17,31 +17,31 @@ class CategoryController extends AbstractController
                 $errors['ajout'] = "Veuillez remplir le champ.";
             }
 
-            if (empty($error)) {
-            $newCategoryManager = new CategoryManager();
-            $newCategoryManager->insertCategory($newCategory);
+            if (empty($errors)) {
+                $newCategoryManager = new CategoryManager();
+                $newCategoryManager->insertCategory($newCategory);
 
-            header('Location:/Admin/category');
-            return null;
+                header('Location:/Admin/category');
+                return null;
             }
         }
 
         return $this->twig->render('Admin/gestion-des-categories.html.twig', ['errors' => $errors]);
     }
 
+        /* a été créée en superglobale, à retirer dès que merge
         public function showCategory(): string
         {
         $categoryManager = new CategoryManager();
-        $categories = $categoryManager->selectAll();
-
+        $categories = $categoryManager->selectCategories();
         return $this->twig->render('Admin/gestion-des-categories.html.twig', ['categories' => $categories]);
-        }
+        }*/
 
-        public function delete($id)
-        {
-            $categoryManager = new CategoryManager();
-            $categoryManager->delete($id);
-    
-            header('location:/Admin/category');
-        }
+    public function delete($id)
+    {
+        $categoryManager = new CategoryManager();
+        $categoryManager->delete($id);
+
+        header('location:/Admin/category');
+    }
 }

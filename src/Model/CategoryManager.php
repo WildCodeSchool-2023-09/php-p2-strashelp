@@ -15,4 +15,10 @@ class CategoryManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
+
+    /*public function selectCategories()
+    {
+        $query = ('SELECT * FROM ' . static::TABLE);
+        return $this->pdo->query($query)->fetchAll();
+    }*/
 }

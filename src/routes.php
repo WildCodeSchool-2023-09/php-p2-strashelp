@@ -12,7 +12,6 @@ return [
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'Admin/category' => ['CategoryController', 'addCategory',],
-    'Admin/category' => ['CategoryController', 'showCategory',],
     'items/delete' => ['ItemController', 'delete',],
     'contact' => ['ContactController', 'contact',],
     'deposeruneannonce' => ['DepotController','deposeruneannonce',],
