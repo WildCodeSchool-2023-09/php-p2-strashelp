@@ -14,10 +14,9 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'contact' => ['ContactController', 'contact',],
-    'deposeruneannonce' => ['DepotController','deposeruneannonce',],
-    'inscription' => ['InscriptionController','inscription',],
-    'connexion' => ['ConnexionController','connexion',],
-    'annonces' => ['AnnoncesController','annonces',],
+    'annonces' => ['AnnonceController','annonces',],
+    'mentionlegales' => ['MentionLegalesController','mentionlegales',],
+    'register' => ['UserController', 'register',],
+    'login' => ['UserController', 'login'],
     'annonces/delete' => ['AnnoncesController','delete',['id']],
-    'mentionlegales' => ['MentionLegalesController','mentionlegales',]
 ];
