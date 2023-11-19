@@ -20,4 +20,5 @@ return [
     'mentionlegales' => ['MentionLegalesController','mentionlegales',],
     'register' => ['UserController', 'register',],
     'login' => ['UserController', 'login'],
+    'user/delete' => ['UserController','deleteUser',['id']],
 ];
