@@ -20,6 +20,7 @@
     --font-project: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
      "Segoe UI Symbol", "Noto Color Emoji";
+
     /* Effets */
     --border-radius-20: 0rem 1.25rem 0rem 1.25rem;
     --border-radius-40: 0rem 2.5rem 0rem 2.5rem;
@@ -34,7 +35,7 @@ body {
 
 p {
     color: var(--p-color);
-    font-family: Poppins;
+    font-family: var(--font-project);
     font-weight: 400;
     line-height: 26px;
     font-size: var(--p-size-desktop);
@@ -43,7 +44,7 @@ p {
 
 p .italic {
     color: var(--p-color);
-    font-family: Poppins;
+    font-family: var(--font-project);
     font-weight: 400;
     line-height: 26px;
     font-size: var(--p-size-desktop);
@@ -53,7 +54,7 @@ p .italic {
 
 p>a {
     color: var(--primary-color);
-    font-family: Poppins;
+    font-family: var(--font-project);
     font-weight: 400;
     line-height: 26px;
     font-size: var(--p-size-desktop);
