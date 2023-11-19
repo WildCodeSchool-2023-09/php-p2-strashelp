@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<section class="searchbar">
+    <h3>Que recherchez-vous ?</h3>
+        <form action="" method="GET" class="essai">
+
+            <div class="dropdown">
+                <select class="menuButton">Catégorie</select>
+                        {% for categorie in categories %}<option  class="dropdown-child"><a href="{{ categorie.id }}">{{ categorie.name }}</a></option> {% endfor %}
+            </div>
+                <input type= "search" placeholder="Entrez votre recherche">
+                <input type="submit" class="button-1" name="sendSearch" value="Rechercher">
+        </form>
+</section>
+
+{% endblock %}

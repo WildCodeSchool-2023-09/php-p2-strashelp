@@ -13,6 +13,8 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    '_searchbar' => ['CategoryController', 'showCategory',],
+    'report' => ['ReportController', 'showReports',],
     'contact' => ['ContactController', 'contact',],
     'annonces' => ['AnnonceController','annonces',],
     'mentionlegales' => ['MentionLegalesController','mentionlegales',],

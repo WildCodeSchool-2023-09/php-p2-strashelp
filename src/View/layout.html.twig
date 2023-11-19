@@ -24,7 +24,8 @@
 		{% include 'Components/_login.html.twig' %}
 		{% include 'Components/_form_register.html.twig' %}
 		{% include 'Components/_footer.html.twig' %}		
-		{% block content %}		
+		{% block content %}
+			{% include 'Components/_ReportForm.html.twig' %}
 		{% endblock %}
 		{% block javascript %}
 			<script src="/assets/JS/script.js"></script>
