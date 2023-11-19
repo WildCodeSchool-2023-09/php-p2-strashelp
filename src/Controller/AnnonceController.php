@@ -2,13 +2,13 @@
 
 namespace App\Controller;
 
-use App\Model\AnnoncesManager;
+use App\Model\AnnonceManager;
 
-class AnnoncesController extends AbstractController
+class AnnonceController extends AbstractController
 {
     public function annonce(): string
     {
-        $annoncesList = new AnnoncesManager();
+        $annoncesList = new AnnonceManager();
         $annonces = $annoncesList->selectAllAd();
 
         return $this->twig->render('Components/card.html.twig', ['annonces' => $annonces]);
