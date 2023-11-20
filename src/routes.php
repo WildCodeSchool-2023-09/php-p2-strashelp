@@ -21,4 +21,9 @@ return [
     'register' => ['UserController', 'register',],
     'login' => ['UserController', 'login'],
     'user/delete' => ['UserController','deleteUser',['id']],
+    'annonce' => ['AnnonceController', 'annonce',],
+    'annonceSearch' => ['AnnonceController', 'annonceSearch', ['page', 'category', 'type']],
+    'annonceCount' => ['AnnonceController', 'countAds',],
+    'deposer-une-annonce' => ['AnnonceController', 'newAnnonces',],
+    'annonces/detail-annonce' => ['AnnonceController', 'annoncesDetail', ['id']],
 ];

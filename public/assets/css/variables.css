@@ -5,6 +5,7 @@
     --primary-color: #4CBFAA;
     --secondary-color: #F1AB91;
     --tertiary-color: #F05A56;
+    --quaterniary-color: #57BCCC;
     --p-color: #121212;
     --p-color-muted: #8D8D8D;
     --h-color: #003D32;
@@ -20,7 +21,6 @@
     --font-project: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
      "Segoe UI Symbol", "Noto Color Emoji";
-
     /* Effets */
     --border-radius-20: 0rem 1.25rem 0rem 1.25rem;
     --border-radius-40: 0rem 2.5rem 0rem 2.5rem;
@@ -30,12 +30,12 @@
 body {
     background-color: var(--light-color);
     min-height: 100vh;
-    font-family: var(--font-project);
+    font-family: Poppins;
 }
 
 p {
     color: var(--p-color);
-    font-family: var(--font-project);
+    font-family: Poppins;
     font-weight: 400;
     line-height: 26px;
     font-size: var(--p-size-desktop);
@@ -44,7 +44,7 @@ p {
 
 p .italic {
     color: var(--p-color);
-    font-family: var(--font-project);
+    font-family: Poppins;
     font-weight: 400;
     line-height: 26px;
     font-size: var(--p-size-desktop);
@@ -54,7 +54,7 @@ p .italic {
 
 p>a {
     color: var(--primary-color);
-    font-family: var(--font-project);
+    font-family: Poppins;
     font-weight: 400;
     line-height: 26px;
     font-size: var(--p-size-desktop);
@@ -85,6 +85,36 @@ p>a {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     border: 0;
+}
+
+.charger-plus {
+    font-family: var(--font-project);
+    font-weight: 500;
+    background-color: white;
+    border: 2px solid var(--quaterniary-color);
+    color: var(--quaterniary-color);
+    font-size: var(--button-p-size);
+    border-radius: var(--border-radius-20);
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem; 
+    transition: 250ms;
+    width: auto;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.charger-plus:hover {
+    font-family: var(--font-project);
+    font-weight: 500;
+    background-color: var(--quaterniary-color);
+    border: 2px solid var(--quaterniary-color);
+    color: white;
+    font-size: var(--button-p-size);
+    border-radius: var(--border-radius-20);
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem; 
+    transition: 250ms;
+    width: auto;
+    justify-content: center;
+    margin-top: 2vh;
 }
 
 /* Form */
@@ -121,4 +151,43 @@ p>a {
     top: 2vh;
     right: 2vw;
     text-align: center;
+}
+
+.uk-navbar-dropdown-nav>li>a {
+    color: var(--primary-color)!important;
+}
+
+/* Responsive mobile */
+
+@media only screen and (max-width: 640px) {
+    
+    .charger-plus {
+        font-family: var(--font-project);
+        font-weight: 500;
+        background-color: white;
+        border: 2px solid var(--quaterniary-color);
+        color: var(--quaterniary-color);
+        font-size: 1.25rem;
+        border-radius: var(--border-radius-20);
+        padding: 0.5rem 1rem 0.5rem 1rem; 
+        transition: 250ms;
+        width: auto;
+        justify-content: center;
+        margin-top: 2vh;
+    }
+    
+    .charger-plus:hover {
+        font-family: var(--font-project);
+        font-weight: 500;
+        background-color: var(--quaterniary-color);
+        border: 2px solid var(--quaterniary-color);
+        color: white;
+        font-size: 1.25rem;
+        border-radius: var(--border-radius-20);
+        padding: 0.5rem 1rem 0.5rem 1rem; 
+        transition: 250ms;
+        width: auto;
+        justify-content: center;
+        margin-top: 2vh;
+    }
 }
