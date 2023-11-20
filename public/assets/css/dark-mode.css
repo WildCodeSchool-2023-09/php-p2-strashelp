@@ -1,0 +1,5 @@
+.dark-mode-body h1, .dark-mode-body p, .dark-mode-body  {
+    background-color: var(--bg-dark);
+    color: var(--lightDark-color) !important;
+}
+
