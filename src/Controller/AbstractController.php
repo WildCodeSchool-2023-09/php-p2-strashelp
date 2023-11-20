@@ -26,8 +26,10 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+        $this->twig->addGlobal('session', $_SESSION);
         $this->twig->addGlobal('categories', $this->showCategory());
     }
+
     private function showCategory()
     {
         $categoryManager = new CategoryManager();
