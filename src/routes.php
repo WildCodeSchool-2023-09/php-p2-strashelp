@@ -23,5 +23,8 @@ return [
     'annonces/search' => ['CategoryController', 'searchAd', ['categorie', 'searchbar']],
     'mentionlegales' => ['MentionLegalesController','mentionlegales',],
     'register' => ['UserController', 'register',],
-    'login' => ['UserController', 'login',],
+    'login' => ['UserController', 'login'],
+    'error' => ['ErrorController','Error',],
+    'user/delete' => ['UserController','deleteUser',['id']],
+    'annonces/delete' => ['AnnoncesController','delete',['id']],
 ];
