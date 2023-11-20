@@ -99,10 +99,11 @@ class UserController extends AbstractController
         session_destroy();
         header('Location : /');
     }
-    public function delete($id)
+
+    public function deleteUsers($id)
     {
         $userManager = new UserManager();
-        $userManager->delete($id);
+        $userManager->deleteUser($id);
 
         header('location:/user');
     }
