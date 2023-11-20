@@ -2,11 +2,11 @@
 
 <div class="uk-width-2-3 uk-align-left">
   <!-- Toggle switch à 3 entrées - laptop version -->
-   <div class="switch_3_ways_v2_laptop">
+   <div id="type" class="switch_3_ways_v2_laptop">
       <!-- Afficher ici une un for de toutes les annonces sans cibler un ads_type -->
-      <div id="toutes" class="switch2 toutes" onclick="change_period2_laptop('toutes')">Toutes</div>
+      <div id="toutes"  class="switch2 toutes" onclick="change_period2_laptop('toutes')">Toutes</div>
       <!-- Afficher ici une boucle for "Recherches" dans recherches -->
-      <div id="recherches" class="switch2 recherches" onclick="change_period2_laptop('recherches')">Recherches</div>
+      <div id="recherches"  class="switch2 recherches" onclick="change_period2_laptop('recherches')">Recherches</div>
       <!-- Afficher ici une boucle for "Propositions" dans propositions -->
       <div id="propositions" class="switch2 propositions" onclick="change_period2_laptop('propositions')">Propositions</div>
       <div id="selector1" class="selector1"></div>
@@ -20,7 +20,7 @@
     <div id="propositions2" class="switch2 propositions2" onclick="change_period2_mobile('propositions2')">Propositions</div>
     <div id="selector2" class="selector2"></div>
   </div>
-
+<div name="0" id="typediv"></div>
 <!-- Select menu "Choisissez la catégorie..." -->
   {# <div class="uk-width-auto" uk-form-custom="target: > * > span:first-child">
   <p class="title-select_dropdown-menu">Tri par :</p>
@@ -37,48 +37,3 @@
         </div>
 </section> #}
 
-{% block javascript %}
-<script>
-  function change_period2_laptop(period){
-  /*const button = document.getElementById("button_load");
-  button.setAttribut("data-type", type);*/
-  let toutes = document.getElementById("toutes");
-  let recherches = document.getElementById("recherches");
-  let propositions = document.getElementById("propositions");
-  let selector1 = document.getElementById("selector1");
-  if(period === "toutes") {
-    selector1.style.left = 0;
-    selector1.style.width = toutes.clientWidth + "px";
-    selector1.innerHTML = "Toutes";
-  }else if(period === "recherches"){
-    selector1.style.left = recherches.clientWidth + "px";
-    selector1.style.width = recherches.clientWidth + "px";
-    selector1.innerHTML = "Recherches";
-  }else{
-    selector1.style.left = toutes.clientWidth + recherches.clientWidth + 1 + "px";
-    selector1.style.width = toutes.clientWidth + "px";
-    selector1.innerHTML = "Propositions";
-  }
-}
-
-function change_period2_mobile(period){
-  let toutes = document.getElementById("toutes2");
-  let recherches = document.getElementById("recherches2");
-  let propositions = document.getElementById("propositions2");
-  let selector2 = document.getElementById("selector2");
-  if(period === "toutes2"){
-    selector2.style.top = 0;
-    selector2.style.height = toutes.clientHeight + "px";
-    selector2.innerHTML = "Toutes";
-  }else if(period === "recherches2"){
-    selector2.style.top = recherches.clientHeight + "px";
-    selector2.style.height = recherches.clientHeight + "px";
-    selector2.innerHTML = "Recherches";
-  }else{
-    selector2.style.top = toutes.clientHeight + recherches.clientHeight + 1 + "px";
-    selector2.style.height = toutes.clientHeight + "px";
-    selector2.innerHTML = "Propositions";
-  }
-}
-</script>
-{% endblock %}

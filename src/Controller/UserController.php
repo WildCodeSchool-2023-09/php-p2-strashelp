@@ -81,7 +81,6 @@ class UserController extends AbstractController
                 return json_encode(['errorsLogin' => $errorsLogin]);
             }
 
-
             $userManager = new UserManager();
             $users = $userManager->selectOneByIdentifiant($credentialsLogin['identifiant']);
             if ($users && password_verify($credentialsLogin['password'], $users['password'])) {
@@ -95,9 +94,9 @@ class UserController extends AbstractController
 
     public function logout()
     {
-        session_unset();
+        unset($_SESSION['user_id']);
         session_destroy();
-        header('Location : /');
+        header("Location: /");
     }
 
     public function deleteUsers($id)

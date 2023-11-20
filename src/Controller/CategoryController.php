@@ -15,6 +15,7 @@ class CategoryController extends AbstractController
             $categoryManager = new CategoryManager();
             $resultSearch = $categoryManager->search($categorieName, $searchBar);
         }
-        return $this->twig->render("annonces/_annonces.html.twig", ['resultSearch' => $resultSearch]);
+
+        return $this->twig->render("Annonce/annonces.html.twig", ['resultSearch' => $resultSearch]);
     }
 }

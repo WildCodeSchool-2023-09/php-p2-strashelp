@@ -20,12 +20,15 @@ return [
     'mentionlegales' => ['MentionLegalesController','mentionlegales',],
     'register' => ['UserController', 'register',],
     'login' => ['UserController', 'login'],
+    'logout' => ['UserController', 'logout'],
     'error' => ['ErrorController','Error',],
     'user/delete' => ['UserController','deleteUser',['id']],
-    'annonce' => ['AnnonceController', 'annonce',],
+    'annonces' => ['AnnonceController', 'annonce',],
     'annonceSearch' => ['AnnonceController', 'annonceSearch', ['page', 'category', 'type']],
     'annonceCount' => ['AnnonceController', 'countAds',],
     'deposer-une-annonce' => ['AnnonceController', 'newAnnonces',],
     'annonces/detail-annonce' => ['AnnonceController', 'annoncesDetail', ['id']],
-    'annonces/delete' => ['AnnoncesController','delete',['id']],
+    'annonces/delete' => ['AnnonceController','delete',['id']],
+    'annonce/detail-annonce/reponse' => ['AnnonceController', 'repondre'],
+
 ];

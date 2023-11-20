@@ -95,3 +95,9 @@ CREATE TABLE `category` (
 `name` VARCHAR(255) NOT NULL
 )
 
+SELECT ad.id, title, image, description, 
+        published_date, user.username, user.localisation, category.name, ad_type.nametype 
+        FROM ad JOIN category ON ad.category_id = category.id 
+        JOIN ad_type ON ad.ad_type_id = ad_type.id 
+        JOIN user ON ad.user_id = user.id  WHERE  category.id = 3 AND  ad_type.id = 1 
+        ORDER BY ad.id DESC LIMIT 1, 3 
