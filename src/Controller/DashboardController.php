@@ -34,13 +34,13 @@ class DashboardController extends AbstractController
     }
 
     public function editUser()
-    { 
+    {
         /*update*/
         return $this->twig->render("Admin/edition-utilisateur.html.twig");
     }
 
     public function informationsUser()
-    { 
+    {
         /*select*/
         return $this->twig->render("Admin/informations-personnelles.html.twig");
     }
