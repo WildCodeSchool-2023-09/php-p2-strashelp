@@ -1,5 +1,5 @@
 function easterEgg() {
-    alert('Disponible chez vous a tout moment pour diverses travaux!');
+    alert('Yavuz Kutuk! formateur php citation prefere ( je suis une machine, tu es une machine, vous etes des machines) PHP better than JS');
  changeImage();
 setTimeout(changeLogo, 5000)
 }
