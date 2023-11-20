@@ -30,5 +30,6 @@ class ItemManager extends AbstractManager
         $statement->bindValue('title', $item['title'], PDO::PARAM_STR);
 
         return $statement->execute();
+        //return $statement->fetchAll();
     }
 }
