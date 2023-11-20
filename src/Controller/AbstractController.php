@@ -3,9 +3,9 @@
 namespace App\Controller;
 
 use Twig\Environment;
-use Twig\Extension\DebugExtension;
-use Twig\Loader\FilesystemLoader;
 use App\Model\CategoryManager;
+use Twig\Loader\FilesystemLoader;
+use Twig\Extension\DebugExtension;
 
 /**
  * Initialized some Controller common features (Twig...)
