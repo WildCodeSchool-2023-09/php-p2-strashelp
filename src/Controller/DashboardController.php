@@ -33,15 +33,34 @@ class DashboardController extends AbstractController
         return $this->twig->render("Admin/gestion-des-utilisateurs.html.twig");
     }
 
-    public function editUser()
+    public function editUser(int $id)
     {
-        /*update*/
-        return $this->twig->render("Admin/edition-utilisateur.html.twig");
+
+        $userManager = new userManager();
+        $updatedUser = $userManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // clean $_POST data
+            $updateFields = array_map('trim', $_POST);
+
+            // TODO validations (length, format...)
+
+            // if validation is ok, update and redirection
+            $userManager->updateUsers($updatedUser);
+
+            // we are redirecting so we don't want any content rendered
+            return null;
+        }
+
+        return $this->twig->render("Admin/edition-utilisateur.html.twig", ['updates' => $updatedUser,
+        ]);
     }
 
     public function informationsUser()
     {
-        /*select*/
+        if (!$this->user) {
+            header('Location:/error');
+        }
         return $this->twig->render("Admin/informations-personnelles.html.twig");
     }
 }

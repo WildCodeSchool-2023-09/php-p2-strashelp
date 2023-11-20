@@ -19,11 +19,11 @@
     </thead>
     <tbody>
         <tr class="tr_dashboard">
-            {# {% for category in categories %}  #}
-            <td class="td_moderation-des-annonces uk-width-1-5"><img src="/assets/images/casa-del-arbol-ibiza-veranda-salon-exterieur.jpeg" class="image_moderation-des-annonces"></td>
-            <td class="td_moderation-des-annonces uk-width-1-5">Catégorie</td>
-            <td class="td_moderation-des-annonces uk-width-2-5"><a href="">Titre de l'annonce<a/></td>
-            {# {% endfor %} #}
+            {% for ad in ads %} 
+            <td class="td_moderation-des-annonces uk-width-1-5"><img src="{{ ad.image }}" class="image_moderation-des-annonces"></td>
+            <td class="td_moderation-des-annonces uk-width-1-5">{{ ad.category.name }}</td>
+            <td class="td_moderation-des-annonces uk-width-2-5"><a href="">{{ ad.title }}<a/></td>
+            {% endfor %}
             <td><a href="" class="uk-button uk-button-default uk-width-1-5 button_supprimer" type="submit">Supprimer</a>
             </td>
         </tr>

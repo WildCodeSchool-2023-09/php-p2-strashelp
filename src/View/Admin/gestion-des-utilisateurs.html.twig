@@ -23,18 +23,19 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Boucle des users ici -->
+        {% for users in user %}
         <tr class="uk-flex-middle tr_dashboard">
-            <td class="td_gestion-des-categories uk-width-small">1</td>  
-            <td class="td_gestion-des-categories uk-width-auto">Carcali</td>
-            <td class="td_gestion-des-categories uk-width-auto">Julien PRIVAT</td>
-            <td class="td_gestion-des-categories uk-width-auto">contact@julien-privat.com</td>
-            <td class="td_gestion-des-categories uk-width-auto">***********</td>
-            <td class="td_gestion-des-categories uk-width-auto">07 77 31 63 96</td>
-            <td class="td_gestion-des-categories uk-width-auto">03-05-1999</td>
+            <td class="td_gestion-des-categories uk-width-small">{{ users.id }}</td>  
+            <td class="td_gestion-des-categories uk-width-auto">{{ users.username }}</td>
+            <td class="td_gestion-des-categories uk-width-auto">{{ users.firstname }} {{ users.lastname }}</td>
+            <td class="td_gestion-des-categories uk-width-auto">{{ users.email }}</td>
+            <td class="td_gestion-des-categories uk-width-auto">{{ users.password }}</td>
+            <td class="td_gestion-des-categories uk-width-auto">{{ users.phone_number }}</td>
+            <td class="td_gestion-des-categories uk-width-auto">{{ users.birthdate }}</td>
             <td><a href="gestion-des-utilisateurs/editer" class="uk-button uk-button-default uk-flex uk-flex-middle button_editer" type="button">Éditer</a>
             <a href="" class="uk-button uk-button-default uk-flex uk-flex-middle button_supprimer" type="button">Supprimer</a></td>
         </tr>
+        {% endfor %}
         <!-- Fin de la boucle des users ici -->
     </tbody>
 </table>
