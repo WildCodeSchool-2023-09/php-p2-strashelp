@@ -54,8 +54,7 @@ li, a:hover{
 color:var(--light-color);
 text-decoration: none;
 }
-.inscrip>li>a { 
-    
+.inscrip>li>a {  
     color: var(--primary-color); 
 }
 .inscrit{
@@ -68,14 +67,11 @@ text-decoration: none;
 .inscrit>li>a:active{
     color:var(--light-color);
    }
-
 .uk-link,a{
     color:var(--light-color)
-
 }
 button a{
     color:var(--light-color)
-
 }
 .uk-link,a:hover{
     color:var(--primary-color)

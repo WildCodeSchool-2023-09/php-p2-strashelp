@@ -22,8 +22,6 @@
     --font-project: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
      "Segoe UI Symbol", "Noto Color Emoji";
-
-    /* Effets */
     --border-radius-20: 0rem 1.25rem 0rem 1.25rem;
     --border-radius-40: 0rem 2.5rem 0rem 2.5rem;
     --border-radius-80: 0rem 5rem 0rem 5rem;

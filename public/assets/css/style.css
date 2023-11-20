@@ -1,6 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/poppins');
 @import './variables.css';
 @import './stylenavbar.css';
+@import './_searchbar.css';
 @import './stylefooter.css';
 @import './dark-mode.css';
 @import './contact_form.css';
