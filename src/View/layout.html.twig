@@ -5,6 +5,7 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="/assets/images/favicon.png">
+		<link rel="stylesheet" href="mentionlegales.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/css/uikit.min.css"/>
 		<title>
 			{% block title %}Strashelp - L'entraide Strasbourgeoise{% endblock %}
@@ -23,13 +24,14 @@
 		</header>
 		<main class="uk-container uk-container-large">			
 		{% block content %}
-			{% include 'Components/_ReportForm.html.twig' %}
 		{% endblock %}
 		</main>
 		{% include 'Components/_footer.html.twig' %}	
 		{% block javascript %}
 			<script src="/assets/JS/script.js"></script>
 			<script src="/assets/JS/script_loadmore.js"></script>
+			<script src="/js/dark-mode.js"></script>
+			<script src="/js/easter-egg.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit-icons.min.js"></script>
 		{% endblock %}

@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use Twig\Environment;
-use App\Model\AnnonceManager;
+use App\Model\CategoryManager;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
 
@@ -21,19 +21,18 @@ abstract class AbstractController
         $this->twig = new Environment(
             $loader,
             [
-                'cache' => false,
-                'debug' => true,
+            'cache' => false,
+            'debug' => true,
             ]
         );
         $this->twig->addExtension(new DebugExtension());
-        $this->twig->addGlobal('adtypes', $this->showAdType());
+        $this->twig->addGlobal('categories', $this->showCategory());
     }
-
-    public function showAdType()
+    private function showCategory()
     {
-        $showAdTypes = new AnnonceManager();
-        $adtypes = $showAdTypes->adType();
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectAll();
 
-        return $adtypes;
+        return $categories;
     }
 }

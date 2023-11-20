@@ -95,4 +95,11 @@ class AnnonceController extends AbstractController
         }
         return $this->twig->render('Annonce/deposer-une-annonce.html.twig', ['erreurs' => $errors]);
     }
+    public function delete($id)
+    {
+        $annonceManager = new AnnonceManager();
+        $annonceManager->delete($id);
+
+        header('location:/annonces');
+    }
 }

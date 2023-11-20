@@ -5,10 +5,11 @@
     --primary-color: #4CBFAA;
     --secondary-color: #F1AB91;
     --tertiary-color: #F05A56;
-    --quaterniary-color: #57BCCC;
+    --bg-dark: #1C1C1C;
     --p-color: #121212;
     --p-color-muted: #8D8D8D;
     --h-color: #003D32;
+    --lightDark-color:white !important;
     /* Titres et texte */
     --h1-size: 4.5rem;
     --h2-size: 3.75rem;
@@ -21,7 +22,10 @@
     --font-project: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
      "Segoe UI Symbol", "Noto Color Emoji";
+<<<<<<< HEAD
     /* Effets */
+=======
+>>>>>>> dev
     --border-radius-20: 0rem 1.25rem 0rem 1.25rem;
     --border-radius-40: 0rem 2.5rem 0rem 2.5rem;
     --border-radius-80: 0rem 5rem 0rem 5rem;
