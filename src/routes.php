@@ -18,5 +18,12 @@ return [
     'inscription' => ['InscriptionController','inscription',],
     'connexion' => ['ConnexionController','connexion',],
     'annonces' => ['AnnoncesController','annonces',],
-    'mentionlegales' => ['MentionLegalesController','mentionlegales',]
+    'annonces/detail-annonce' => ['AnnonceController', 'annoncesDetail', ['id']],
+    'admin' => ['DashboardController', 'dashboard',],
+    'admin/gestion-des-categories' => ['DashboardController', 'gestionCategory',],
+    'admin/gestion-des-utilisateurs' => ['DashboardController', 'gestionUser',],
+    'admin/gestion-des-utilisateurs/editer' => ['DashboardController', 'editUser',],
+    'admin/moderation-des-annonces' => ['DashboardController', 'moderationAnnonces',],
+    'admin/informations-personnelles' => ['DashboardController', 'informationsUser',],
+    'mentionlegales' => ['MentionLegalesController','mentionlegales',],
 ];

@@ -1,0 +1,43 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<main class="uk-container uk-container-large">
+<section class="uk-section uk-container-medium">
+    <div>
+	    <h3 class="h3_dashboard">Gestion des utilisateurs</h3>
+        <p class="description_dashboard uk-align-center">Vous pourrez depuis ici supprimer un utilisateur, la liste compléte y est inscrite ici.</p>
+    </div>
+    <!-- Table gestion des utilisateurs -->
+    <div class="uk-width-expand">
+    <table class="uk-table uk-table-justify uk-table-divider">
+    <thead>
+        <tr class="th_gestion-des-categories">
+            <th class="uk-width-small">Id</th>
+            <th class="uk-width-small">Pseudo</th>
+            <th class="uk-width-auto">Prénom NOM</th>
+            <th class="uk-width-auto">Email</th>
+            <th class="uk-width-auto">Mot de passe</th>
+            <th class="uk-width-auto">Téléphone</th>
+            <th class="uk-width-auto">Date de naissance</th>
+            <th>Action(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Boucle des users ici -->
+        <tr class="uk-flex-middle tr_dashboard">
+            <td class="td_gestion-des-categories uk-width-small">1</td>  
+            <td class="td_gestion-des-categories uk-width-auto">Carcali</td>
+            <td class="td_gestion-des-categories uk-width-auto">Julien PRIVAT</td>
+            <td class="td_gestion-des-categories uk-width-auto">contact@julien-privat.com</td>
+            <td class="td_gestion-des-categories uk-width-auto">***********</td>
+            <td class="td_gestion-des-categories uk-width-auto">07 77 31 63 96</td>
+            <td class="td_gestion-des-categories uk-width-auto">03-05-1999</td>
+            <td><a href="gestion-des-utilisateurs/editer" class="uk-button uk-button-default uk-flex uk-flex-middle button_editer" type="button">Éditer</a>
+            <a href="" class="uk-button uk-button-default uk-flex uk-flex-middle button_supprimer" type="button">Supprimer</a></td>
+        </tr>
+        <!-- Fin de la boucle des users ici -->
+    </tbody>
+</table>
+</section>
+</main>
+{% endblock %}
