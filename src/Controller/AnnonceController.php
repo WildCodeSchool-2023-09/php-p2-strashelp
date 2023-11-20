@@ -11,7 +11,7 @@ class AnnonceController extends AbstractController
         $annoncesList = new AnnonceManager();
         $annonces = $annoncesList->selectAllAd();
 
-        return $this->twig->render('Components/_card.html.twig', ['annonces' => $annonces]);
+        return $this->twig->render('Annonce/annonces.html.twig', ['annonces' => $annonces]);
     }
 
     public function annonceSearch($page = 0, $category = 0, $type = 0)
@@ -101,5 +101,21 @@ class AnnonceController extends AbstractController
         $annonceManager->delete($id);
 
         header('location:/annonces');
+    }
+
+    public function repondre()
+    {
+        //$errors = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $response = array_map('trim', $_POST);
+
+            $userUserName = $_SESSION['user_username'];
+            $userMail = $_SESSION['user_email'];
+            $annonceManager = new AnnonceManager();
+            $annonceManager->responseAd($response, $userUserName, $userMail);
+        }
+
+        return $this->twig->render('Annonce/repondreannonce.html.twig');
     }
 }

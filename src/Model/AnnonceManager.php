@@ -5,6 +5,7 @@ namespace App\Model;
 class AnnonceManager extends AbstractManager
 {
     public const TABLE = 'ad';
+    public const JOINTURE = 'reponse';
 
     public function selectAllAd(string $orderBy = 'ad.id', string $direction = 'DESC'): array
     {
@@ -46,7 +47,6 @@ class AnnonceManager extends AbstractManager
             $where = ' WHERE ';
             $where .= $whereCat . ' AND ' . $whereType;
         }
-
 
         $statement = $this->pdo->prepare('SELECT ad.id, title, image, description, 
         published_date, user.username, user.localisation, category.name, ad_type.nametype 
@@ -118,5 +118,14 @@ class AnnonceManager extends AbstractManager
         $statement->execute();
 
         return $statement->fetch();
+    }
+
+    public function responseAd(array $response, $userUserName, $userMail)
+    {
+        $statement = $this->pdo->prepare('INSERT INTO ' . static::JOINTURE . ' (name, mail,
+         description) VALUES (:name, :mail, :description)');
+        $statement->bindValue(':name', $userUserName);
+        $statement->bindValue(':mail', $userMail);
+        $statement->bindValue(':description', $response['user_description']);
     }
 }
