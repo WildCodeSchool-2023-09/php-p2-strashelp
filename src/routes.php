@@ -20,6 +20,7 @@ return [
     'mentionlegales' => ['MentionLegalesController','mentionlegales',],
     'register' => ['UserController', 'register',],
     'login' => ['UserController', 'login'],
+    'error' => ['ErrorController','Error',],
     'user/delete' => ['UserController','deleteUser',['id']],
     'annonces/delete' => ['AnnoncesController','delete',['id']],
 ];
