@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class AnnoncesManager extends AbstractManager
+class AnnonceManager extends AbstractManager
 {
     public const TABLE = 'ad';
 

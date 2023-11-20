@@ -13,13 +13,15 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    '_searchbar' => ['CategoryController', 'showCategory',],
+    'report' => ['ReportController', 'showReports',],
     'contact' => ['ContactController', 'contact',],
     'deposeruneannonce' => ['DepotController','deposeruneannonce',],
     'inscription' => ['InscriptionController','inscription',],
     'connexion' => ['ConnexionController','connexion',],
     'annonces' => ['AnnoncesController','annonces',],
-    'annonces' => ['CategoryController', 'searchAd', ['categorie', 'searchbar']],
-    'mentionlegales' => ['MentionLegalesController','mentionlegales',]
+    'annonces/search' => ['CategoryController', 'searchAd', ['categorie', 'searchbar']],
+    'mentionlegales' => ['MentionLegalesController','mentionlegales',],
     'register' => ['UserController', 'register',],
     'login' => ['UserController', 'login',],
 ];

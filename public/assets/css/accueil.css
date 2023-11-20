@@ -1,0 +1,41 @@
+.title_les-dernieres-annonces {
+    font-family: var(--font-project);
+    font-size: var(--h4-size);
+    font-weight: 600;
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+}
+
+.notre-demarche {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.notre-demarche h5 {
+    font-family: var(--font-project);
+    font-size: var(--h5-size);
+    font-weight: 600;
+    color: var(--h-color);
+    text-align: center;
+}
+
+.notre-demarche p {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+@media only screen and (max-width: 460px) {
+
+    .title_les-dernieres-annonces {
+        font-family: var(--font-project);
+        font-size: var(--h5-size);
+        font-weight: 600;
+        text-align: center;
+        color: var(--primary-color);
+        text-align: center;
+        margin-top: 5vh;
+        margin-bottom: 3vh;
+    }
+}

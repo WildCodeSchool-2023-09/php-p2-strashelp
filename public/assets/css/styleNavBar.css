@@ -4,9 +4,6 @@
     flex-direction: row;
     color: var(--primary-color);
 }
-
-   
-
 .uk-navbar-nav>li>a {
     color: var(--primary-color);
     font-weight: 400;
@@ -20,12 +17,10 @@
 }
 .uk-navbar-nav>li>a:hover{
     color:var(--tertiary-color);
-
 }
 .uk-navbar-nav>li>a:active{
  color:var(--light-color);
 }
-
 .uk-button {
     background-color: var(--primary-color);
     color: var(--light-color);
@@ -34,7 +29,6 @@
     box-shadow: 0px 5px 25px rgba(75, 190, 169, .3);
 }
 .uk-link {
-
 color: var(--light-color);
 align-self: center;
 }
@@ -66,6 +60,11 @@ text-decoration: none;
 
 .uk-link,a{
     color:var(--light-color)
+
+}
+button a{
+    color:var(--light-color)
+
 }
 .uk-link,a:hover{
     color:var(--primary-color)
