@@ -21,4 +21,5 @@ return [
     'register' => ['UserController', 'register',],
     'login' => ['UserController', 'login'],
     'user/delete' => ['UserController','deleteUser',['id']],
+    'annonces/delete' => ['AnnoncesController','delete',['id']],
 ];

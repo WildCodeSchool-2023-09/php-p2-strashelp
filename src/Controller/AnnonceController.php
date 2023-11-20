@@ -13,4 +13,11 @@ class AnnonceController extends AbstractController
 
         return $this->twig->render('Components/card.html.twig', ['annonces' => $annonces]);
     }
+    public function delete($id)
+    {
+        $annonceManager = new AnnonceManager();
+        $annonceManager->delete($id);
+
+        header('location:/annonces');
+    }
 }
