@@ -7,6 +7,7 @@ class AnnonceManager extends AbstractManager
     public const TABLE = 'ad';
     public const JOINTURE = 'reponse';
 
+    // Fonction pour les cards des annonces avec un affichage par 3
     public function selectAllAd(string $orderBy = 'ad.id', string $direction = 'DESC'): array
     {
         $query = 'SELECT ad.id, title, image, description, published_date, user.username, 
