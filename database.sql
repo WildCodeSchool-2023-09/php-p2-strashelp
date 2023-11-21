@@ -77,8 +77,6 @@ FOREIGN KEY (category_id) REFERENCES category(id),
 FOREIGN KEY (ad_type_id) REFERENCES ad_type(id)
 )
 
-DROP TABLE`ad`;
-
 CREATE TABLE `ad_type` (
     `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     `nametype` VARCHAR(100) NOT NULL
