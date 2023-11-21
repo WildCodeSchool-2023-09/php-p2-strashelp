@@ -65,7 +65,7 @@ class AnnonceManager extends AbstractManager
             }
         }
 
-        $statement->bindValue(':page', ($page * 2), \PDO::PARAM_INT);
+        $statement->bindValue(':page', ($page * 3), \PDO::PARAM_INT);
 
         $statement->execute();
 

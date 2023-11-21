@@ -10,6 +10,10 @@ class DashboardController extends AbstractController
 {
     public function dashboard()
     {
+        if (!$this->user) {
+            header('Location:/error');
+        }
+
         return $this->twig->render("Admin/dashboard.html.twig");
     }
 
@@ -21,6 +25,10 @@ class DashboardController extends AbstractController
 
     public function moderationAnnonces($id)
     {
+        if (!$this->user) {
+            header('Location:/error');
+        }
+
         $annonceManager = new AnnonceManager();
         $annonceManager->delete($id);
         return $this->twig->render("Admin/moderation-des-annonces.html.twig");
@@ -28,6 +36,10 @@ class DashboardController extends AbstractController
 
     public function gestionUser($id)
     {
+        if (!$this->user) {
+            header('Location:/error');
+        }
+
         $userManager = new UserManager();
         $userManager->delete($id);
         return $this->twig->render("Admin/gestion-des-utilisateurs.html.twig");
@@ -35,6 +47,9 @@ class DashboardController extends AbstractController
 
     public function editUser(int $id)
     {
+        if (!$this->user) {
+            header('Location:/error');
+        }
 
         $userManager = new userManager();
         $updatedUser = $userManager->selectOneById($id);
@@ -61,6 +76,7 @@ class DashboardController extends AbstractController
         if (!$this->user) {
             header('Location:/error');
         }
+
         return $this->twig->render("Admin/informations-personnelles.html.twig");
     }
 }

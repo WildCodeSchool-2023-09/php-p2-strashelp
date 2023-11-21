@@ -32,13 +32,23 @@ class CategoryManager extends AbstractManager
         return $this->pdo->query($query)->fetchAll();
     }
 
-    public function search(string $categorieName, string $searchBar)
+    public function search(string $searchbar)
     {
         $statement = $this->pdo->prepare('SELECT * FROM ad LEFT JOIN category ON ad.category_id = category.id 
-        WHERE  category.name = :categorie OR
-        title LIKE :searchbar');
-        $statement->bindValue(':categorie', $categorieName);
-        $statement->bindValue(':searchbar', $searchBar . "%");
+        WHERE description LIKE :searchbar OR title LIKE :searchbar LIMIT 3');
+
+        $statement->bindValue(':searchbar', $searchbar . "%");
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+
+    public function searchCat(string $categorie)
+    {
+        $statement = $this->pdo->prepare('SELECT * FROM ad LEFT JOIN category ON ad.category_id = category.id 
+        WHERE  category.id = :categorie LIMIT 3');
+
+        $statement->bindValue(':categorie', $categorie);
         $statement->execute();
 
         return $statement->fetchAll();
