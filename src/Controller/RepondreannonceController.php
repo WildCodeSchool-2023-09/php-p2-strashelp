@@ -8,6 +8,9 @@ class RepondreannonceController extends AbstractController
 {
     public function repondreannonce()
     {
+        if (!$this->user) {
+            header('Location:/error');
+        }
         return $this->twig->render("repondreannonce/repondreannonce.html.twig");
     }
 }

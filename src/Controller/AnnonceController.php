@@ -122,6 +122,9 @@ class AnnonceController extends AbstractController
 
     public function repondre()
     {
+        if (!$this->user) {
+            header('Location:/error');
+        }
         //$errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
