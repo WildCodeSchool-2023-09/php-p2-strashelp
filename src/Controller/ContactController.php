@@ -12,6 +12,7 @@ class ContactController extends AbstractController
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentialsContact = array_map('trim', $_POST);
+
             if (!isset($credentialsContact['email']) || empty($credentialsContact['email'])) {
                 $errors['email'] = 'champ obligatoire';
             }
@@ -29,8 +30,9 @@ class ContactController extends AbstractController
             }
 
             if (empty($errors)) {
+                $userId = $_SESSION['user_id'];
                 $contactManager = new ContactManager();
-                $contactManager->insert($credentialsContact);
+                $contactManager->insert($credentialsContact, $userId);
             }
         }
         return $this->twig->render('Contact/contact.html.twig', ['errors' => $errors]);

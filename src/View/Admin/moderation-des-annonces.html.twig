@@ -17,16 +17,17 @@
             <th class="uk-width-1-5">Action(s)</th>
         </tr>
     </thead>
-    <tbody>
-        <tr class="tr_dashboard">
-            {% for ad in ads %} 
-            <td class="td_moderation-des-annonces uk-width-1-5"><img src="{{ ad.image }}" class="image_moderation-des-annonces"></td>
-            <td class="td_moderation-des-annonces uk-width-1-5">{{ ad.category.name }}</td>
-            <td class="td_moderation-des-annonces uk-width-2-5"><a href="">{{ ad.title }}<a/></td>
-            {% endfor %}
-            <td><a href="" class="uk-button uk-button-default uk-width-1-5 button_supprimer" type="submit">Supprimer</a>
-            </td>
+    <tbody>{% for adform in ads %}
+        <tr class="tr_dashboard">           
+            <td class="td_moderation-des-annonces uk-width-1-5"><img src="{{ adform.image }}" class="image_moderation-des-annonces"></td>
+            <td class="td_moderation-des-annonces uk-width-1-5">{{ adform.name }}</td>
+            <td class="td_moderation-des-annonces uk-width-2-5"><a href="">{{ adform.title }}<a/></td>           
+            <td><form action="../Admin/moderation-des-annonces/delete" method="post">
+            <input type="hidden" name="id" value="{{ adform.id }}">
+            <button class="uk-button uk-button-default uk-width-1-5 button_supprimer" type="submit">Supprimer</button></td>
+            </form></td>
         </tr>
+        {% endfor %}
     </tbody>
 </table>
 

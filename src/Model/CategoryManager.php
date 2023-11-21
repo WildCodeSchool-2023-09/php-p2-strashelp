@@ -8,10 +8,10 @@ class CategoryManager extends AbstractManager
 {
     public const TABLE = 'category';
 
-    public function insertCategory(array $addCategory): int
+    public function insertCategory(array $newCategory): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`) VALUES (:ajout)");
-        $statement->bindValue(':ajout', $addCategory['ajout'], PDO::PARAM_STR);
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (name) VALUES (:ajout)");
+        $statement->bindValue(':ajout', $newCategory['ajout'], PDO::PARAM_STR);
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
@@ -22,7 +22,7 @@ class CategoryManager extends AbstractManager
         return $this->pdo->query($query)->fetchAll();
     }*/
 
-    public function selectAll(string $orderBy = 'name', string $direction = 'ASC'): array
+    public function selectAll(string $orderBy = 'id', string $direction = 'ASC'): array
     {
         $query = 'SELECT * FROM ' . static::TABLE;
         if ($orderBy) {
@@ -52,5 +52,13 @@ class CategoryManager extends AbstractManager
         $statement->execute();
 
         return $statement->fetchAll();
+    }
+
+    public function deleteCategory(int $id): void
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM " . static::TABLE . " WHERE id=:id ");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
     }
 }

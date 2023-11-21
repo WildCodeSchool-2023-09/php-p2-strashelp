@@ -17,31 +17,33 @@ class DashboardController extends AbstractController
         return $this->twig->render("Admin/dashboard.html.twig");
     }
 
-/*  Fonction réalisée dans le CategoryController, à déplacer ?
-    public function gestionCategory()
-    {
-        return $this->twig->render("Admin/gestion-des-categories.html.twig");
-    }*/
-
-    public function moderationAnnonces($id)
+    public function moderationAnnonces()
     {
         if (!$this->user) {
             header('Location:/error');
         }
 
-        $annonceManager = new AnnonceManager();
-        $annonceManager->delete($id);
         return $this->twig->render("Admin/moderation-des-annonces.html.twig");
     }
 
-    public function gestionUser($id)
+    public function moderationAnnoncesDelete()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+
+            $annoncesManagerDel = new AnnonceManager();
+            $annoncesManagerDel->deleteAd((int)$id);
+
+            header('Location:/Admin/moderation-des-annonces');
+        }
+    }
+
+    public function gestionUser()
     {
         if (!$this->user) {
             header('Location:/error');
         }
 
-        $userManager = new UserManager();
-        $userManager->delete($id);
         return $this->twig->render("Admin/gestion-des-utilisateurs.html.twig");
     }
 
@@ -55,19 +57,15 @@ class DashboardController extends AbstractController
         $updatedUser = $userManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
             $updateFields = array_map('trim', $_POST);
 
-            // TODO validations (length, format...)
+            $userManager->updateUsers($updateFields);
 
-            // if validation is ok, update and redirection
-            $userManager->updateUsers($updatedUser);
-
-            // we are redirecting so we don't want any content rendered
-            return null;
+            header('Location: /Admin/gestion-des-utilisateurs');
         }
 
-        return $this->twig->render("Admin/edition-utilisateur.html.twig", ['updates' => $updatedUser,
+        return $this->twig->render("Admin/edition-utilisateur.html.twig", [
+            'updates' => $updatedUser,
         ]);
     }
 
@@ -78,5 +76,13 @@ class DashboardController extends AbstractController
         }
 
         return $this->twig->render("Admin/informations-personnelles.html.twig");
+    }
+
+    public function deleteUser($id): void
+    {
+        $userManager = new UserManager();
+        $userManager->deleteUser((int)$id);
+
+        header('Location:/Admin/gestion-des-utilisateurs');
     }
 }
