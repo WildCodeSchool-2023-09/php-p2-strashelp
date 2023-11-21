@@ -130,4 +130,10 @@
     [class*=uk-align] {
         margin-bottom: 0;
     }
+
+    .div-mobile_dark-mode {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
 }

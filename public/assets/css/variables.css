@@ -5,23 +5,24 @@
     --primary-color: #4CBFAA;
     --secondary-color: #F1AB91;
     --tertiary-color: #F05A56;
-    --bg-dark: #1C1C1C;
+    --quaterniary-color: #57BCCC;
     --p-color: #121212;
     --p-color-muted: #8D8D8D;
     --h-color: #003D32;
-    --lightDark-color:white !important;
+    /* Dark mode */
+    --background-dark-mode: #121212 !important;
+    --color-dark-mode: #FAFAFA !important;
     /* Titres et texte */
     --h1-size: 4.5rem;
     --h2-size: 3.75rem;
     --h3-size: 3rem;
     --h4-size: 2.25rem;
     --h5-size: 1.5rem;
-    --button-p-size: 1.75rem;
+    --button-p-size: 1.25rem;
     --p-size-desktop: 1rem;
     --p-size-mobile: 0.85rem;
-    --font-project: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
-     "Segoe UI Symbol", "Noto Color Emoji";
+    --font-project: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* Effets */
     --border-radius-20: 0rem 1.25rem 0rem 1.25rem;
     --border-radius-40: 0rem 2.5rem 0rem 2.5rem;
     --border-radius-80: 0rem 5rem 0rem 5rem;
@@ -29,24 +30,30 @@
 
 body {
     background-color: var(--light-color);
-    min-height: 100vh;
-    font-family: Poppins;
+    box-sizing: border-box;
 }
+
+main {
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+}
+
+/* Textes */
 
 p {
     color: var(--p-color);
-    font-family: Poppins;
+    font-family: var(--font-project);
     font-weight: 400;
-    line-height: 26px;
+    line-height: 1.5rem;
     font-size: var(--p-size-desktop);
     text-align: left;
 }
 
 p .italic {
     color: var(--p-color);
-    font-family: Poppins;
+    font-family: var(--font-project);
     font-weight: 400;
-    line-height: 26px;
+    line-height: 1.5rem;
     font-size: var(--p-size-desktop);
     text-align: left;
     font-style: italic;
@@ -54,9 +61,9 @@ p .italic {
 
 p>a {
     color: var(--primary-color);
-    font-family: Poppins;
+    font-family: var(--font-project);
     font-weight: 400;
-    line-height: 26px;
+    line-height: 1.5rem;
     font-size: var(--p-size-desktop);
     text-align: left;
     text-decoration: underline;
@@ -71,9 +78,8 @@ p>a {
     font-size: var(--button-p-size);
     border-radius: var(--border-radius-20);
     box-shadow: 0px 5px 25px rgba(75, 190, 169, .3);
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    border: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .button-1:hover {
@@ -82,9 +88,8 @@ p>a {
     font-size: var(--button-p-size);
     border-radius: var(--border-radius-20);
     box-shadow: 0px 5px 25px rgba(241, 171, 145, .3);
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    border: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .charger-plus {
@@ -95,7 +100,7 @@ p>a {
     color: var(--quaterniary-color);
     font-size: var(--button-p-size);
     border-radius: var(--border-radius-20);
-    padding: 0.75rem 1.5rem 0.75rem 1.5rem; 
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem;
     transition: 250ms;
     width: auto;
     justify-content: center;
@@ -110,11 +115,42 @@ p>a {
     color: white;
     font-size: var(--button-p-size);
     border-radius: var(--border-radius-20);
-    padding: 0.75rem 1.5rem 0.75rem 1.5rem; 
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem;
     transition: 250ms;
     width: auto;
     justify-content: center;
     margin-top: 2vh;
+}
+
+.button_dark-mode {
+    font-family: var(--font-project);
+    font-weight: 500;
+    background-color: #00261d;
+    color: var(--color-dark-mode);
+    font-size: var(--p-size-desktop);
+    border-radius: var(--border-radius-20);
+    box-shadow: 0px 5px 25px rgba(0, 36, 27, 0.3);
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+    border: 0;
+    width: auto;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.button_navbar:hover {
+    font-family: var(--font-project);
+    font-weight: 500;
+    background-color: #00261d;
+    color: var(--color-dark-mode);
+    font-size: var(--p-size-desktop);
+    border-radius: var(--border-radius-20);
+    box-shadow: 0px 5px 25px rgba(0, 36, 27, 0.3);
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+    border: 0;
+    width: auto;
+    transition: 250ms;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 /* Form */
@@ -154,13 +190,22 @@ p>a {
 }
 
 .uk-navbar-dropdown-nav>li>a {
-    color: var(--primary-color)!important;
+    color: var(--primary-color) !important;
+}
+
+/* Images du site */
+
+.img-paysage {
+    width: auto;
+    height: auto;
+    border-radius: var(--border-radius-20);
+    border-color: 5px solid var(--dark-color);
 }
 
 /* Responsive mobile */
 
 @media only screen and (max-width: 640px) {
-    
+
     .charger-plus {
         font-family: var(--font-project);
         font-weight: 500;
@@ -169,13 +214,13 @@ p>a {
         color: var(--quaterniary-color);
         font-size: 1.25rem;
         border-radius: var(--border-radius-20);
-        padding: 0.5rem 1rem 0.5rem 1rem; 
+        padding: 0.5rem 1rem 0.5rem 1rem;
         transition: 250ms;
         width: auto;
         justify-content: center;
         margin-top: 2vh;
     }
-    
+
     .charger-plus:hover {
         font-family: var(--font-project);
         font-weight: 500;
@@ -184,10 +229,47 @@ p>a {
         color: white;
         font-size: 1.25rem;
         border-radius: var(--border-radius-20);
-        padding: 0.5rem 1rem 0.5rem 1rem; 
+        padding: 0.5rem 1rem 0.5rem 1rem;
         transition: 250ms;
         width: auto;
         justify-content: center;
         margin-top: 2vh;
+    }
+
+    .button_dark-mode {
+        font-family: var(--font-project);
+        font-weight: 500;
+        background-color: #00261d;
+        color: var(--color-dark-mode);
+        font-size: var(--p-size-desktop);
+        border-radius: var(--border-radius-20);
+        box-shadow: 0px 5px 25px rgba(0, 36, 27, 0.3);
+        padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+        border: 0;
+        width: auto;
+        text-decoration: none;
+        letter-spacing: 1px;
+        position: fixed;
+        top: 0;
+        justify-content: center;
+    }
+
+    .button_navbar:hover {
+        font-family: var(--font-project);
+        font-weight: 500;
+        background-color: #00261d;
+        color: var(--color-dark-mode);
+        font-size: var(--p-size-desktop);
+        border-radius: var(--border-radius-20);
+        box-shadow: 0px 5px 25px rgba(0, 36, 27, 0.3);
+        padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+        border: 0;
+        width: auto;
+        transition: 250ms;
+        text-decoration: none;
+        letter-spacing: 1px;
+        position: fixed;
+        top: 0;
+        justify-content: center;
     }
 }
