@@ -49,6 +49,9 @@ class AnnonceController extends AbstractController
 
     public function newAnnonces()
     {
+        if (!$this->user) {
+            header('Location:/error');
+        }
         // On défini les erreurs dans un array vide
         $errors = [];
 
