@@ -22,9 +22,6 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
-CREATE DATABASE `StrasHelp`;
-USE `StrasHelp`;
-
 CREATE TABLE `user` (
 `id` INT PRIMARY KEY AUTO_INCREMENT  NOT NULL,
 `firstname` VARCHAR(100) NOT NULL,
