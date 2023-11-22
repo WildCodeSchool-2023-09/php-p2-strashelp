@@ -172,6 +172,7 @@ p>a {
     top: 2vh;
     right: 2vw;
     text-align: center;
+    z-index: 99999;
 }
 
 .uk-notification-message-warning {
@@ -187,6 +188,7 @@ p>a {
     top: 2vh;
     right: 2vw;
     text-align: center;
+    z-index: 99999;
 }
 
 .uk-navbar-dropdown-nav>li>a {
