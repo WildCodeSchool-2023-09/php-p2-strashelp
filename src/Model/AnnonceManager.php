@@ -65,7 +65,7 @@ class AnnonceManager extends AbstractManager
             }
         }
 
-        $statement->bindValue(':page', ($page * 2), \PDO::PARAM_INT);
+        $statement->bindValue(':page', ($page * 3), \PDO::PARAM_INT);
 
         $statement->execute();
 
@@ -128,5 +128,24 @@ class AnnonceManager extends AbstractManager
         $statement->bindValue(':name', $userUserName);
         $statement->bindValue(':mail', $userMail);
         $statement->bindValue(':description', $response['user_description']);
+    }
+
+    public function selectAd(): array
+    {
+        $query = ('SELECT ad.id, title, image, description, 
+        published_date, user.username, user.localisation, category.name, 
+        ad_type.nametype FROM ' . static::TABLE . ' JOIN category 
+        ON ad.category_id = category.id JOIN ad_type ON ad.ad_type_id = ad_type.id 
+        JOIN user ON ad.user_id = user.id ');
+
+        return $this->pdo->query($query)->fetchAll();
+    }
+
+    public function deleteAd(int $id): void
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM " . static::TABLE . " WHERE id=:id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
     }
 }
