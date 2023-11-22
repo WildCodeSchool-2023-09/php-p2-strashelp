@@ -96,6 +96,7 @@ class UserController extends AbstractController
     public function logout()
     {
         unset($_SESSION['user_id']);
+        unset($_SESSION['is_admin']);
         session_destroy();
         header("Location: /");
     }
