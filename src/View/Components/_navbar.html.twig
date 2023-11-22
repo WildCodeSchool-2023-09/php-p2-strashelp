@@ -1,7 +1,7 @@
 <nav class="nav_desktop uk-navbar" uk-sticky>
 	<div class="uk-navbar-left">
 		<ul class="uk-navbar-nav uk-flex-middle">
-			<li><a class="uk-logo" href="#" onclick="easterEgg();"><img src="assets/images/logo-strashelp-300px.png" class="logo_navbar" alt="StrasHelp" id="logo-image"></a></li>
+			<li><a class="uk-logo" href="#" onclick="easterEgg();"><img src="/assets/images/logo-strashelp-300px.png" class="logo_navbar" alt="StrasHelp" id="logo-image"></a></li>
 			<li><a href="/" class="link_navbar">Accueil</a></li>
 			<li><a href="/annonces" class="link_navbar">Annonces</a></li>
 			<li><a href="/contact" class="link_navbar">Contact</a></li>
@@ -16,7 +16,7 @@
 				<a href="">Profil</a>
 				<div class="div-modale_profil uk-navbar-dropdown" uk-dropdown="mode: click">
 					<ul class="uk-nav uk-navbar-dropdown-nav">
-						<li><a href="/informations-personnelles" class="liens-modale_profil">Informations personnelles</a></li>
+						<li><a href="/Admin/informations-personnelles" class="liens-modale_profil">Informations personnelles</a></li>
 						{% if session.is_admin %}
 						<li><a href="/Admin" class="liens-modale_profil">Le Nid</a></li>
 						{% endif %}

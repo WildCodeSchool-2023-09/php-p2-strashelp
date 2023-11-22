@@ -6,8 +6,8 @@ use App\Model\AnnonceManager;
 use App\Model\CategoryManager;
 
 /**
-* @SuppressWarnings(PHPMD)
-**/
+ * @SuppressWarnings(PHPMD)
+ **/
 
 class AnnonceController extends AbstractController
 {
@@ -106,7 +106,7 @@ class AnnonceController extends AbstractController
                 move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile);
                 $createAnnonces = new AnnonceManager();
                 if ($createAnnonces->createAnnonce($ads, $userId)) {
-                    header('Location:/contact');
+                    header('Location:/annonces');
                 }
             }
         }
