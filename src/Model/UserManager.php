@@ -33,14 +33,21 @@ class UserManager extends AbstractManager
      */
     public function updateUsers(array $updateFields): bool
     {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `firsname` = :firstname,
-        `lastname` = :lastname, `email` = :email, `phone` = :phone,
-        `motdepasse` = :motdepasses WHERE id=:id");
+
+        $statement = $this->pdo->prepare(" UPDATE " . self::TABLE . " SET firstname = :firstname, 
+        birthdate = :birthdate,
+        lastname = :lastname, email = :email, phone_number = :phone_number,
+         username = :username, localisation = :localisation,
+        password = :password WHERE id=:id ");
         $statement->bindValue(':firstname', $updateFields['firstname'], \PDO::PARAM_STR);
         $statement->bindValue(':lastname', $updateFields['lastname'], \PDO::PARAM_STR);
         $statement->bindValue(':email', $updateFields['email']);
-        $statement->bindValue(':phone', $updateFields['phone']);
-        $statement->bindValue(':motdepasse', password_hash($updateFields['motdepasse'], PASSWORD_DEFAULT));
+        $statement->bindValue(':phone_number', $updateFields['phone_number']);
+        $statement->bindValue(':birthdate', $updateFields['birthdate']);
+        $statement->bindValue(':username', $updateFields['username']);
+        $statement->bindValue(':localisation', $updateFields['localisation']);
+        $statement->bindValue(':id', $updateFields['id']);
+        $statement->bindValue(':password', password_hash($updateFields['password'], PASSWORD_DEFAULT));
 
         return $statement->execute();
     }
@@ -57,8 +64,18 @@ class UserManager extends AbstractManager
     public function deleteUser(int $id): void
     {
         // prepared request
-        $statement = $this->pdo->prepare("DELETE FROM " . static::TABLE . " WHERE id=:id");
+        $statement = $this->pdo->prepare("DELETE FROM " . static::TABLE . " WHERE user.id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
+    }
+
+    public function selectAllUsers(string $orderBy = '', string $direction = 'ASC'): array
+    {
+        $query = 'SELECT * FROM ' . static::TABLE;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
     }
 }

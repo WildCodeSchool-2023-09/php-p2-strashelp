@@ -23,17 +23,18 @@
         </tr>
     </thead>
     <tbody>
-        {% for users in user %}
+       {% for user in users %}
         <tr class="uk-flex-middle tr_dashboard">
-            <td class="td_gestion-des-categories uk-width-small">{{ users.id }}</td>  
-            <td class="td_gestion-des-categories uk-width-auto">{{ users.username }}</td>
-            <td class="td_gestion-des-categories uk-width-auto">{{ users.firstname }} {{ users.lastname }}</td>
-            <td class="td_gestion-des-categories uk-width-auto">{{ users.email }}</td>
-            <td class="td_gestion-des-categories uk-width-auto">{{ users.password }}</td>
-            <td class="td_gestion-des-categories uk-width-auto">{{ users.phone_number }}</td>
-            <td class="td_gestion-des-categories uk-width-auto">{{ users.birthdate }}</td>
-            <td><a href="gestion-des-utilisateurs/editer" class="uk-button uk-button-default uk-flex uk-flex-middle button_editer" type="button">Éditer</a>
-            <a href="" class="uk-button uk-button-default uk-flex uk-flex-middle button_supprimer" type="button">Supprimer</a></td>
+            <td class="td_gestion-des-categories uk-width-small">{{ user.id }}</td>  
+            <td class="td_gestion-des-categories uk-width-auto">{{ user.username }}</td>
+            <td class="td_gestion-des-categories uk-width-auto">{{ user.firstname }} {{ user.lastname }}</td>
+            <td class="td_gestion-des-categories uk-width-auto">{{ user.email }}</td>
+            <td class="td_gestion-des-categories uk-width-auto">{{ user.password }}</td>
+            <td class="td_gestion-des-categories uk-width-auto">{{ user.phone_number }}</td>
+            <td class="td_gestion-des-categories uk-width-auto">{{ user.birthdate }}</td>
+            <td><a href="/Admin/gestion-des-utilisateurs/editer?id={{ user.id }}" class="uk-button uk-button-default uk-flex uk-flex-middle button_editer">Éditer</a>
+            <a href="/Admin/gestion-des-utilisateurs/delete?id={{ user.id }}" class="uk-button uk-button-default uk-flex uk-flex-middle button_editer">Supprimer</a></td>
+            
         </tr>
         {% endfor %}
         <!-- Fin de la boucle des users ici -->

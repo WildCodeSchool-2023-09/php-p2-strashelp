@@ -60,16 +60,16 @@ CREATE TABLE `category` (
 
 CREATE TABLE `ad` (
 `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`title` VARCHAR(100) NOT NULL,
+`title` VARCHAR(100) NULL,
 `image` VARCHAR(500),
-`description` VARCHAR(6000) NOT NULL,
-`username` VARCHAR(100) NOT NULL,
-`localisation` VARCHAR(150) NOT NULL,
+`description` VARCHAR(6000) NULL,
+`username` VARCHAR(100) NULL,
+`localisation` VARCHAR(150) NULL,
 `published_date` date,
 `user_id` INT NOT NULL,
 FOREIGN KEY (user_id) REFERENCES user(id),
 `category_id` INT NOT NULL,
-FOREIGN KEY (category_id) REFERENCES category(id),
+FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE,
 `ad_type_id` INT NOT NULL,
 FOREIGN KEY (ad_type_id) REFERENCES ad_type(id)
 )
@@ -93,3 +93,4 @@ CREATE TABLE `signal_report` (
     `report_ad_id` INT NULL,
     FOREIGN KEY (report_ad_id) REFERENCES report_ad(id)
 )
+  
