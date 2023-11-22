@@ -1,28 +1,22 @@
-<section class="login-section">
-	<div id="modal-center-1" class="uk-flex-top" uk-modal>
-		<div class="uk-modal-dialog container  uk-modal-body uk-margin-auto-vertical login">
+<section class="uk-container-small uk-align-center">
+	<div id="modal-center-1" class="uk-flex-top pop-up modal-center-1" uk-modal>
+		<div class="uk-modal-dialog container  uk-modal-body uk-margin-auto-vertical div_login">
 			<button class="uk-modal-close-default" type="button" uk-close></button>			
-				<h2>Connexion</h2>
-				<p>Connectez-vous avec votre identifiant ou adresse mail
-				</p>
-				<form action="" method="post" id="login-form" class="form-input">
-					<input type="text" placeholder="Identifiant" name="identifiant" id="errorsidentifiant">
+				<h3 class="h3_login">Connexion</h3>
+				<p class="instructions-center_login">Connectez-vous avec votre identifiant ou adresse mail</p>
+				<form action="" method="post" id="login-form" class="container_login">
+					<input type="text" placeholder="Identifiant" name="identifiant" id="errorsidentifiant" class="values_login uk-width-1">
 					<br>
-					<input type="password" placeholder="Mot de passe" name="password" id="errorspassword">
+					<input type="password" placeholder="Mot de passe" name="password" id="errorspassword" class="values_login uk-width-1">
 					<br>
-					<div class="form-button">
-						<input type="submit" name="loginButton" value="Se connecter" class="button-1 form_contact button_contact login-submit">
+					<div class="div-button_login">
+						<p><a href="">Mot de passe oublié ?</a></p>
+						<input type="submit" name="loginButton" value="Se connecter" class="button-submit_login">
 					</div>
 				</form>
-				<div class="forgottenPassword">
-					<p>
-						<a>Mot de passe oublié ?</a>
-					</p>
-					<p>Si vous ne possédez pas encore de compte,
-						<a href="#modal-center-2" data-uk-toggle=" #modal-center " uk-toggle>inscrivez-vous</a>
-						en quelques clics</p>
+				<div class="instructions-left_login">
+					<p>Si vous ne possédez pas encore de compte, <a href="#modal-center-2" data-uk-toggle=" #modal-center " uk-toggle>inscrivez-vous</a> en quelques clics</p>
 				</div>
 			</div>
 		</div>
-	
 </section>

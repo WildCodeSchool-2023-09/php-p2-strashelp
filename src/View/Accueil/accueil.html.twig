@@ -1,12 +1,12 @@
 <section class="section-annonce_accueil">
     <div class="div-annonce_accueil uk-flex-inline uk-width-auto uk-align-center">
         <h5>Besoin d'aide ? Envie d'aider ? N'attendez plus !</h5>
-        <a class="button-annonce_dashboard" href="deposer-une-annonce">Rechercher une annonce</a>
+        <a class="button-annonce_dashboard" href="/annonces">Rechercher une annonce</a>
     </div>
     <hr class="uk-divider-vertical">
 </section>
 <main class="uk-container uk-container-large">
-<section class="uk-section"> {{ dump(users) }}
+<section class="uk-section">
     <div class="uk-align-center uk-width-expand uk-margin-large-bottom">
     <h4 class="title_les-dernieres-annonces">Les dernières annonces</h4>
     {% include "Components/_card.html.twig" %}
