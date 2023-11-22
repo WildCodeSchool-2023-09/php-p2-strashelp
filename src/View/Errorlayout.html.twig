@@ -12,12 +12,9 @@
 		</title>
         {% block stylesheet %}{% endblock %}
 		</head>
-		<body>
+		<body class="body_error">
             {% block content %}
 			{% include 'Components/_error.html.twig' %}
-			{% endblock %}
-			
-			{% block javascript %}{% endblock %}
-			
+			{% endblock %}			
 		</body>
 	</html>
