@@ -3,9 +3,9 @@
 @import './accueil.css';
 @import './dashboard.css';
 @import './navbar.css';
-@import './footer.css';
-@import './_login.css';
-@import './reportform.css';
+@import './stylefooter.css';
+@import './login.css';
+/*@import './reportform.css';*/
 @import './searchbar.css';
 @import './trouver-proposer.css';
 @import './dropdown-menu.css';
@@ -13,7 +13,7 @@
 @import './card.css';
 @import './deposer-une-annonce.css';
 @import './detail-annnonce.css';
-@import './repondreannonce.css';
+/*@import './repondreannonce.css';*/
 @import './contact_form.css';
 @import './error.css';
 @import './dark-mode.css';

@@ -56,12 +56,14 @@
     text-transform: none;
 }
 
-.uk-button-default {
+.button_trouver-proposer {
+    background-color: var(--tertiary-color);
     border: 0;
     font-size: var(--button-p-size);
     font-family: var(--font-project);
     font-weight: 400;
     font-style: none;
+    text-decoration: none;
 }
 
 .img-icon_trouver-proposer {

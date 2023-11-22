@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         modal.classList.remove('uk-open');
                         modal.classList.add('uk-close');
                     }, 800);
-                    setTimeout(() => {
+                    setTimeout(() => {                        
                         UIkit.notification({ message: data.message_success_register, status: 'success', pos: 'top-right' })
                     }, 1200);
                 }

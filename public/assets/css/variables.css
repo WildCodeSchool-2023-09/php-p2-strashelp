@@ -10,7 +10,7 @@
     --p-color-muted: #8D8D8D;
     --h-color: #003D32;
     /* Dark mode */
-    --background-dark-mode: #121212 !important;
+    --background-dark-mode: #00261d !important;
     --color-dark-mode: #FAFAFA !important;
     /* Titres et texte */
     --h1-size: 4.5rem;
@@ -105,6 +105,7 @@ p>a {
     width: auto;
     justify-content: center;
     margin-top: 2vh;
+    margin-bottom: 5vh;
 }
 
 .charger-plus:hover {
@@ -120,6 +121,7 @@ p>a {
     width: auto;
     justify-content: center;
     margin-top: 2vh;
+    margin-bottom: 5vh;
 }
 
 .button_dark-mode {
@@ -172,6 +174,7 @@ p>a {
     top: 2vh;
     right: 2vw;
     text-align: center;
+    z-index: 99999;
 }
 
 .uk-notification-message-warning {
@@ -187,6 +190,7 @@ p>a {
     top: 2vh;
     right: 2vw;
     text-align: center;
+    z-index: 99999;
 }
 
 .uk-navbar-dropdown-nav>li>a {
@@ -219,6 +223,7 @@ p>a {
         width: auto;
         justify-content: center;
         margin-top: 2vh;
+        margin-bottom: 5vh;
     }
 
     .charger-plus:hover {
@@ -234,6 +239,7 @@ p>a {
         width: auto;
         justify-content: center;
         margin-top: 2vh;
+        margin-bottom: 5vh;
     }
 
     .button_dark-mode {

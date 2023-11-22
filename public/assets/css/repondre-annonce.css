@@ -1,56 +1,63 @@
-h2{
+h2 {
     text-align: center;
     padding-bottom: 30px;
-    color:#4CBFAA ;
+    color: #4CBFAA;
 
 }
-label{
-    padding-right:150px ;
+
+label {
+    padding-right: 150px;
     align-content: center;
-    
+
 }
-form{
-   align-content: center;
-   padding: 50px;
-   padding-right: 600px;
-   padding-left:400px;
+
+form {
+    align-content: center;
+    padding: 50px;
+    padding-right: 600px;
+    padding-left: 400px;
 }
-.tous{
-    background-color:  #003D32;
+
+.tous {
+    background-color: #003D32;
     height: 500px;
     width: 800px;
-    align-content:center;
+    align-content: center;
     row-gap: 50px;
     border-radius: var(--border-radius-20);
-box-shadow: 0px 5px 25px rgba(241, 171, 145, .3);
-padding-top: 0.75rem;
-padding-bottom: 0.75rem;
+    box-shadow: 0px 5px 25px rgba(241, 171, 145, .3);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
-.uk-textarea{
-background-color: #003D32;
-background-color:white;
-color: var(--light-color);
-font-size: var(--button-p-size);
-border-radius: var(--border-radius-20);
-box-shadow: 0px 5px 25px rgba(241, 171, 145, .3);
-padding-top: 0.75rem;
-padding-bottom: 0.75rem;
+
+.uk-textarea {
+    background-color: #003D32;
+    background-color: white;
+    color: var(--light-color);
+    font-size: var(--button-p-size);
+    border-radius: var(--border-radius-20);
+    box-shadow: 0px 5px 25px rgba(241, 171, 145, .3);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
-input{
-    background-color:rgb(7, 81, 68);
+
+input {
+    background-color: rgb(7, 81, 68);
     color: white;
     font-size: var(--button-p-size);
     border-radius: var(--border-radius-20);
     box-shadow: 0px 5px 25px rgba(241, 171, 145, .3);
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-  
+
 }
+
 input::placeholder {
     color: white !important;
-  }
-  button{
-    background-color:#F05A56 ;
+}
+
+button {
+    background-color: #F05A56;
     align-items: center;
     color: white;
     font-size: var(--button-p-size);
@@ -58,16 +65,18 @@ input::placeholder {
     box-shadow: 0px 5px 25px rgba(241, 171, 145, .3);
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
- }
-.text{
+}
+
+.text {
     border-radius: var(--border-radius-20);
     box-shadow: 0px 5px 25px rgba(241, 171, 145, .3);
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     height: 55px;
-    align-content: center;   
+    align-content: center;
 }
-.tel{
+
+.tel {
     padding-bottom: 20px;
     padding-top: 50px;
 }
