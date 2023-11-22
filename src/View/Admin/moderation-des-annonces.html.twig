@@ -20,7 +20,7 @@
     </thead>
     <tbody>{% for adform in ads %}
         <tr class="tr_dashboard">           
-            <td class="td_moderation-des-annonces uk-width-1-5"><img src="{{ adform.image }}" class="image_moderation-des-annonces"></td>
+            <td class="td_moderation-des-annonces uk-width-1-5"><img src="/{{ adform.image }}" class="image_moderation-des-annonces"></td>
             <td class="td_moderation-des-annonces uk-width-1-5">{{ adform.name }}</td>
             <td class="td_moderation-des-annonces uk-width-2-5"><a href="">{{ adform.title }}<a/></td>           
             <td><form action="../Admin/moderation-des-annonces/delete" method="post">

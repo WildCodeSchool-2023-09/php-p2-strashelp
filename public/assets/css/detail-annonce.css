@@ -1,8 +1,3 @@
-main {
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-}
-
 .section-annonce_detail-annonce {
     display: flex;
     justify-content: center;
@@ -127,7 +122,7 @@ main {
 /* Responsive mobile */
 
 @media only screen and (max-width: 640px) {
-    
+
     .section-annonce_detail-annonce {
         display: flex;
         flex-direction: column;
@@ -141,7 +136,7 @@ main {
         margin: auto;
         margin-bottom: 5vh;
     }
-    
+
     .div-user_detail-annonce {
         width: 65vw;
         margin: auto;
