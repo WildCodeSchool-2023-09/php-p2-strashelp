@@ -9,6 +9,9 @@
     --p-color: #121212;
     --p-color-muted: #8D8D8D;
     --h-color: #003D32;
+    /* Dark mode */
+    --background-dark-mode: #121212 !important;
+    --color-dark-mode: #FAFAFA !important;
     /* Titres et texte */
     --h1-size: 4.5rem;
     --h2-size: 3.75rem;
@@ -35,7 +38,7 @@ main {
     padding-bottom: 15vh;
 }
 
-/* Textes */
+/* Textes balises p */
 
 p {
     color: var(--p-color);
@@ -119,6 +122,37 @@ p>a {
     margin-top: 2vh;
 }
 
+.button_dark-mode {
+    font-family: var(--font-project);
+    font-weight: 500;
+    background-color: #00261d;
+    color: var(--color-dark-mode);
+    font-size: var(--p-size-desktop);
+    border-radius: var(--border-radius-20);
+    box-shadow: 0px 5px 25px rgba(0, 36, 27, 0.3);
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+    border: 0;
+    width: auto;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.button_navbar:hover {
+    font-family: var(--font-project);
+    font-weight: 500;
+    background-color: #00261d;
+    color: var(--color-dark-mode);
+    font-size: var(--p-size-desktop);
+    border-radius: var(--border-radius-20);
+    box-shadow: 0px 5px 25px rgba(0, 36, 27, 0.3);
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+    border: 0;
+    width: auto;
+    transition: 250ms;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
 /* Form */
 
 .form-input .uk-input .uk-search-input::placeholder {
@@ -200,5 +234,42 @@ p>a {
         width: auto;
         justify-content: center;
         margin-top: 2vh;
+    }
+
+    .button_dark-mode {
+        font-family: var(--font-project);
+        font-weight: 500;
+        background-color: #00261d;
+        color: var(--color-dark-mode);
+        font-size: var(--p-size-desktop);
+        border-radius: var(--border-radius-20);
+        box-shadow: 0px 5px 25px rgba(0, 36, 27, 0.3);
+        padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+        border: 0;
+        width: auto;
+        text-decoration: none;
+        letter-spacing: 1px;
+        position: fixed;
+        top: 0;
+        justify-content: center;
+    }
+
+    .button_navbar:hover {
+        font-family: var(--font-project);
+        font-weight: 500;
+        background-color: #00261d;
+        color: var(--color-dark-mode);
+        font-size: var(--p-size-desktop);
+        border-radius: var(--border-radius-20);
+        box-shadow: 0px 5px 25px rgba(0, 36, 27, 0.3);
+        padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+        border: 0;
+        width: auto;
+        transition: 250ms;
+        text-decoration: none;
+        letter-spacing: 1px;
+        position: fixed;
+        top: 0;
+        justify-content: center;
     }
 }
