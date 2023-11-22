@@ -6,6 +6,11 @@ use App\Model\CategoryManager;
 
 class CategoryController extends AbstractController
 {
+    public function gestionCategory()
+    {
+        return $this->twig->render("Admin/gestion-des-categories.html.twig");
+    }
+
     public function addCategory(): ?string
     {
         $errors = [];
@@ -20,29 +25,19 @@ class CategoryController extends AbstractController
             if (empty($errors)) {
                 $newCategoryManager = new CategoryManager();
                 $newCategoryManager->insertCategory($newCategory);
-
-                header('Location:/Admin/category');
-                return null;
+                header('Location: /Admin/gestion-des-categories');
             }
         }
 
         return $this->twig->render('Admin/gestion-des-categories.html.twig', ['errors' => $errors]);
     }
 
-        /* a été créée en superglobale, à retirer dès que merge
-        public function showCategory(): string
-        {
-        $categoryManager = new CategoryManager();
-        $categories = $categoryManager->selectCategories();
-        return $this->twig->render('Admin/gestion-des-categories.html.twig', ['categories' => $categories]);
-        }*/
-
-    public function delete($id)
+    public function deleteCat($id)
     {
         $categoryManager = new CategoryManager();
-        $categoryManager->delete($id);
+        $categoryManager->deleteCategory($id);
 
-        header('location:/Admin/category');
+        header('location: /Admin/gestion-des-categories');
     }
 
     public function searchAd()
@@ -51,10 +46,15 @@ class CategoryController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $categorieName = $_GET['categorie'];
             $searchBar = $_GET['searchbar'];
-            $categoryManager = new CategoryManager();
-            $resultSearch = $categoryManager->search($categorieName, $searchBar);
+            if ($categorieName) {
+                $categoryManager = new CategoryManager();
+                $resultSearch = $categoryManager->searchCat($categorieName);
+            }
+            if ($searchBar) {
+                $categoryManager = new CategoryManager();
+                $resultSearch = $categoryManager->search($searchBar);
+            }
         }
-
         return $this->twig->render("Annonce/annonces.html.twig", ['resultSearch' => $resultSearch]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\AnnonceManager;
+use App\Model\CategoryManager;
 
 /**
 * @SuppressWarnings(PHPMD)
@@ -10,10 +11,20 @@ use App\Model\AnnonceManager;
 
 class AnnonceController extends AbstractController
 {
-    public function annonce(): string
+    public function annonce($categorie = 0, $searchbar = ''): string
     {
+
         $annoncesList = new AnnonceManager();
         $annonces = $annoncesList->selectAllAd();
+
+        if ($searchbar) {
+            $annoncelist = new CategoryManager();
+            $annonces = $annoncelist->search($searchbar);
+        }
+        if ($categorie) {
+            $annoncelist = new CategoryManager();
+            $annonces = $annoncelist->searchCat($categorie);
+        }
 
         return $this->twig->render('Annonce/annonces.html.twig', ['annonces' => $annonces]);
     }
@@ -38,6 +49,9 @@ class AnnonceController extends AbstractController
 
     public function newAnnonces()
     {
+        if (!$this->user) {
+            header('Location:/error');
+        }
         // On défini les erreurs dans un array vide
         $errors = [];
 
@@ -108,6 +122,9 @@ class AnnonceController extends AbstractController
 
     public function repondre()
     {
+        if (!$this->user) {
+            header('Location:/error');
+        }
         //$errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

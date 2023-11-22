@@ -3,11 +3,11 @@
 namespace App\Controller;
 
 use Twig\Environment;
+use App\Model\UserManager;
 use App\Model\AnnonceManager;
 use App\Model\CategoryManager;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
-use App\Model\UserManager;
 
 /**
  * Initialized some Controller common features (Twig...)
@@ -36,6 +36,7 @@ abstract class AbstractController
         $this->user = isset($_SESSION['user_id']) ? $userManager->selectOneById($_SESSION['user_id']) : false;
         $this->twig->addGlobal('user', $this->user);
         $this->twig->addGlobal('session', $_SESSION);
+        $this->twig->addGlobal('users', $this->allUsers());
     }
 
     private function showCategory()
@@ -57,8 +58,16 @@ abstract class AbstractController
     public function moderateAds()
     {
         $moderateAds = new AnnonceManager();
-        $ads = $moderateAds->selectAllAd();
+        $ads = $moderateAds->selectAd();
 
         return $ads;
+    }
+
+    public function allUsers()
+    {
+        $moderateUsers = new UserManager();
+        $users = $moderateUsers->selectAllUsers();
+
+        return $users;
     }
 }
