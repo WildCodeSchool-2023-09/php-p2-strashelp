@@ -25,29 +25,6 @@ SET time_zone = "+00:00";
 CREATE DATABASE `StrasHelp`;
 USE `StrasHelp`;
 
-CREATE TABLE `contact` (
-`id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`firstname` VARCHAR(100) NOT NULL,
-`lastname` VARCHAR(100) NOT NULL,
-`email` VARCHAR(150) NOT NULL,
-`message` VARCHAR(3000) NOT NULL,
-`user_id` INT NULL,
-FOREIGN KEY (user_id) REFERENCES user(id)
-)
-
-CREATE TABLE `report_ad`(
-`id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`report_reason` VARCHAR(255) DEFAULT NULL,
-`ad_id` INT NULL,
-FOREIGN KEY (ad_id) REFERENCES ad(id)
-)
-
-CREATE TABLE `signal_report` (
-    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    `report_ad_id` INT NULL,
-    FOREIGN KEY (report_ad_id) REFERENCES report_ad(id)
-)
-
 CREATE TABLE `user` (
 `id` INT PRIMARY KEY AUTO_INCREMENT  NOT NULL,
 `firstname` VARCHAR(100) NOT NULL,
@@ -59,6 +36,26 @@ CREATE TABLE `user` (
 `birthdate` date NOT NULL,
 `localisation` VARCHAR(150) NOT NULL,
 `is_admin` bool
+)
+
+CREATE TABLE `contact` (
+`id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`firstname` VARCHAR(100) NOT NULL,
+`lastname` VARCHAR(100) NOT NULL,
+`email` VARCHAR(150) NOT NULL,
+`message` VARCHAR(3000) NOT NULL,
+`user_id` INT NULL,
+FOREIGN KEY (user_id) REFERENCES user(id)
+)
+
+CREATE TABLE `ad_type` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `nametype` VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE `category` (
+`id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+`name` VARCHAR(255) NOT NULL
 )
 
 CREATE TABLE `ad` (
@@ -77,13 +74,6 @@ FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE,
 FOREIGN KEY (ad_type_id) REFERENCES ad_type(id)
 )
 
-DROP TABLE`ad`;
-
-CREATE TABLE `ad_type` (
-    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    `nametype` VARCHAR(100) NOT NULL
-)
-
 CREATE TABLE `image` (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 `image_name` VARCHAR(500),
@@ -91,8 +81,16 @@ id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 FOREIGN KEY (ad_id) REFERENCES ad(id)
 )
 
-CREATE TABLE `category` (
+CREATE TABLE `report_ad`(
 `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`name` VARCHAR(255) NOT NULL
+`report_reason` VARCHAR(255) DEFAULT NULL,
+`ad_id` INT NULL,
+FOREIGN KEY (ad_id) REFERENCES ad(id)
+)
+
+CREATE TABLE `signal_report` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `report_ad_id` INT NULL,
+    FOREIGN KEY (report_ad_id) REFERENCES report_ad(id)
 )
   
