@@ -2,11 +2,25 @@
 
 namespace App\Model;
 
-use PDO;
+use pdo;
 
 class CategoryManager extends AbstractManager
 {
     public const TABLE = 'category';
+
+    public function insertCategory(array $addCategory): int
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`) VALUES (:ajout)");
+        $statement->bindValue(':ajout', $addCategory['ajout'], PDO::PARAM_STR);
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
+
+    /*public function selectCategories()
+    {
+        $query = ('SELECT * FROM ' . static::TABLE);
+        return $this->pdo->query($query)->fetchAll();
+    }*/
 
     public function selectAll(string $orderBy = 'name', string $direction = 'ASC'): array
     {

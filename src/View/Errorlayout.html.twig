@@ -13,8 +13,9 @@
         {% block stylesheet %}{% endblock %}
 		</head>
 		<body>
-			
-            {% block content %}{% endblock %}
+            {% block content %}
+			{% include 'Components/_error.html.twig' %}
+			{% endblock %}
 			
 			{% block javascript %}{% endblock %}
 			

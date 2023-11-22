@@ -3,6 +3,12 @@ const loginSubmit = document.querySelector('.login-submit')
 const registerForm = document.getElementById('register-form')
 const loginForm = document.getElementById('login-form')
 
+/*const affichageLoginOff = document.getElementById('login-off')
+affichageLoginOff.style.display = "block"
+
+const affichageLoginOn = document.getElementById('login-on')
+affichageLoginOn.style.display = "none"*/
+
 document.addEventListener('DOMContentLoaded', function () {
 
     registerForm.addEventListener('submit', (event) => {
@@ -86,6 +92,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     setTimeout(() => {
                         UIkit.notification({ message: data.message_success, status: 'success', pos: 'top-right' })
                     }, 1200);
+
+                    /*affichageLoginOff.style.display = "none"
+                    affichageLoginOn.style.display = "block"*/
                 }
 
                 if (data.errorsLogin) {
