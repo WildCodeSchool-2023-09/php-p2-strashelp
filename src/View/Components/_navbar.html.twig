@@ -16,8 +16,8 @@
 				<a href="">Profil</a>
 				<div class="div-modale_profil uk-navbar-dropdown" uk-dropdown="mode: click">
 					<ul class="uk-nav uk-navbar-dropdown-nav">
-						<li><a href="/informations-personnelles" class="liens-modale_profil">Informations personnelles</a></li>
-						{% if session.is_admin %}		
+						<li><a href="/Admin/informations-personnelles" class="liens-modale_profil">Informations personnelles</a></li>
+						{% if session.is_admin %}
 						<li><a href="/Admin" class="liens-modale_profil">Le Nid</a></li>
 						{% endif %}
 						<li><a href="/logout" class="liens-modale_profil">Déconnexion</a></li>
