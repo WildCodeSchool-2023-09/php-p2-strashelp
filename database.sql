@@ -66,7 +66,6 @@ CREATE TABLE `ad` (
 `title` VARCHAR(100) NOT NULL,
 `image` VARCHAR(500),
 `description` VARCHAR(6000) NOT NULL,
-`ad_type` bool NOT NULL,
 `username` VARCHAR(100) NOT NULL,
 `localisation` VARCHAR(150) NOT NULL,
 `published_date` date,
@@ -78,9 +77,11 @@ FOREIGN KEY (category_id) REFERENCES category(id),
 FOREIGN KEY (ad_type_id) REFERENCES ad_type(id)
 )
 
+DROP TABLE`ad`;
+
 CREATE TABLE `ad_type` (
     `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    `name` VARCHAR(100) NOT NULL
+    `nametype` VARCHAR(100) NOT NULL
 )
 
 CREATE TABLE `image` (
@@ -94,4 +95,3 @@ CREATE TABLE `category` (
 `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 `name` VARCHAR(255) NOT NULL
 )
-
