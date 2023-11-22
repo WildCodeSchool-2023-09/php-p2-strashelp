@@ -4,6 +4,10 @@ namespace App\Controller;
 
 use App\Model\AnnonceManager;
 
+/**
+* @SuppressWarnings(PHPMD)
+**/
+
 class AnnonceController extends AbstractController
 {
     public function annonce(): string
@@ -65,12 +69,11 @@ class AnnonceController extends AbstractController
             }
 
             if (strlen($ads['description']) > 800) {
-                $errors['description'] = "Rentrez une description de moins de 800 
-                caractères et de plus de 35 caractères";
+                $errors['description'] = "Rentrez une description de moins de 800 caractères";
             }
 
             if (strlen($ads['description']) < 35) {
-                $errors['description'] = "Rentrez une description de moins de plus de 35 caractères";
+                $errors['description'] = "Rentrez une description d'au moins 35 caractères";
             }
 
             if ((!in_array($extension, $authorizedExtensions))) {

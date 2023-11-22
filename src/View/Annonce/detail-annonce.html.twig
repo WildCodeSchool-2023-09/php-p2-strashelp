@@ -1,6 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
+<main class="uk-container uk-container-large">
 <section class="section-annonce_detail-annonce uk-align-center">
 		<div class="div-annonce_detail-annonce uk-align-left">
 			<img src="../.{{ annonceID.image }}" alt="{{ annonceID.title }}" class="image_detail-annonce">
@@ -17,4 +18,5 @@
 			<a class="uk-button button_detail-annonce" href="/annonce/detail-annonce/reponse">Contactez l'annonceur</a>
 		</div>
 </section>
+</main>
 {% endblock %}

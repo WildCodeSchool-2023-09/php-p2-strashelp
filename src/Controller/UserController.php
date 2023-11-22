@@ -85,6 +85,7 @@ class UserController extends AbstractController
             $users = $userManager->selectOneByIdentifiant($credentialsLogin['identifiant']);
             if ($users && password_verify($credentialsLogin['password'], $users['password'])) {
                 $_SESSION['user_id'] = $users['id'];
+                $_SESSION['is_admin'] = $users['is_admin'];
                 return json_encode(['status_login' => 'success', 'message_success' => 'Connexion réussie']);
             } else {
                 return json_encode(['status_login' => 'errors', 'message_error' => 'Erreur connexion']);

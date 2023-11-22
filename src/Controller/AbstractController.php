@@ -31,6 +31,7 @@ abstract class AbstractController
         $this->twig->addExtension(new DebugExtension());
         $this->twig->addGlobal('categories', $this->showCategory());
         $this->twig->addGlobal('adtypes', $this->showAdType());
+        $this->twig->addGlobal('ads', $this->moderateAds());
         $userManager = new UserManager();
         $this->user = isset($_SESSION['user_id']) ? $userManager->selectOneById($_SESSION['user_id']) : false;
         $this->twig->addGlobal('user', $this->user);
@@ -51,5 +52,13 @@ abstract class AbstractController
         $adtypes = $showAdTypes->adType();
 
         return $adtypes;
+    }
+
+    public function moderateAds()
+    {
+        $moderateAds = new AnnonceManager();
+        $ads = $moderateAds->selectAllAd();
+
+        return $ads;
     }
 }
