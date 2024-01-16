@@ -56,7 +56,7 @@ class AnnonceController extends AbstractController
         $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $uploadDir = './assets/images/';
+            $uploadDir = '/assets/images/';
             $uniqueName = uniqid('', true) . basename($_FILES['image']['name']);
             $uploadFile = $uploadDir . $uniqueName;
             $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
