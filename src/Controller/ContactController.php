@@ -35,6 +35,6 @@ class ContactController extends AbstractController
                 $contactManager->insert($credentialsContact, $userId);
             }
         }
-        return $this->twig->render('Contact/contact.html.twig', ['errors' => $errors]);
+        return $this->twig->render('contact/contact.html.twig', ['errors' => $errors]);
     }
 }
